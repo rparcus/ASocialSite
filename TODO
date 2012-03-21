@@ -17,6 +17,7 @@ Usage and notes:
 
 - @andr Clone this repository from github.com using netbeans and commit 
     something new; 
+- @andr upload all the cool stuff you've been doing lately ^^
 - Define a generic <div> node to hold "posts";
 - Find a way to host asocial website and wsdl online;
 - Define the database structure using some smart tool, like an automatic EER to
