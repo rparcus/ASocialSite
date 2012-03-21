@@ -1,0 +1,29 @@
+********************************************************************************
+***                                                                          *** 
+***             ---THE AMAZING TODO LIST---                                  ***
+***                                                                          ***
+********************************************************************************
+--------------------------------------------------------------------------------
+Usage and notes:
+    This previously stated, this is as simple todo list. Very simple.
+    Let's use @... if we know who should do what.
+    English makes everything sound cooler. Let's use it. Also, we should set 
+    tasks' priority simply by position. That's it for me. This note can be
+    changed, and it probably should.
+        
+        Best regards,
+        Robert
+--------------------------------------------------------------------------------
+
+- @andr Clone this repository from github.com using netbeans and commit 
+    something new; 
+- Define a generic <div> node to hold "posts";
+- Find a way to host asocial website and wsdl online;
+- Define the database structure using some smart tool, like an automatic EER to
+    database software. Also useful for documentation;
+
+-
+- User authentication and user management modules needed;
+- Chat (if aproved);
+- Define website features to present;
+- Start documentation;
