@@ -180,7 +180,9 @@ Nam purus ante, varius in rutrum vitae, aliquam nec sem. Nullam lobortis dui ege
           <ul>
               <li><a href="login.php">Login</a></li>
               <li><a href="send_post.php">Send Post</a></li>
+              <li><a href="upload_file_form.php">Upload File</a></li>
               <li><a href="update_xml_call.php">Update XML</a></li>
+              <li><a href="php_parse_xml.php">Parse XML</a></li>
           </ul>
       </div>
   </div>  
