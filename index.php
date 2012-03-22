@@ -82,7 +82,7 @@
 	border-top: 1px solid rgb(63,189,237);
 	z-index:999;		
 }
-input{
+input, textarea{
    color:#FFFFFF;
    background-color:rgb(17,17,15);
    border-style:solid;
