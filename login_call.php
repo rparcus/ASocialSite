@@ -5,9 +5,7 @@
 <body>
 
 <?php
-function paramWrapper ($parameters){
-    return array('parameters' => $parameters);
-}
+require_once("param_wrapper.php");
 
 ini_set("soap.wsdl_cache_enabled", "0");
 try{

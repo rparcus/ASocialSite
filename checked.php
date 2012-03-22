@@ -6,11 +6,7 @@
     </head>
     <body>
         <?php
-          function paramWrapper ($parameters){
-            //filtra i parametri per farli accettare da SOAP..
-            return array('parameters' => $parameters);
-        }
-        
+        require_once("param_wrapper.php");
         
         if((isset($_POST['username']) && isset($_POST['password'])) &&
             $_POST['username'] != "" && $_POST['password'] != ""){
