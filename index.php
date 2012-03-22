@@ -109,12 +109,8 @@ function mouse_out_button(FRM,BTN)
   <div id="login">
 
   <?php
-          function paramWrapper ($parameters){
-            //filtra i parametri per farli accettare da SOAP..
-            return array('parameters' => $parameters);
-        }
-        
-        
+    require_once("param_wrapper.php");
+            
         if((isset($_POST['username']) && isset($_POST['password'])) &&
             $_POST['username'] != "" && $_POST['password'] != ""){
        try{
@@ -156,6 +152,7 @@ function mouse_out_button(FRM,BTN)
 <div id="body_container">
 
   <div id="left">
+  <?php include_once("update_xml_call.php"); ?>
   
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies posuere lobortis. Suspendisse potenti. Nunc non imperdiet leo. Donec fermentum purus ac diam mollis quis pulvinar turpis lacinia. Aliquam ut augue augue. Cras non ante vel lectus convallis tincidunt accumsan quis lorem. Vestibulum tempor urna sed nibh semper eget vehicula massa sagittis. Nam sem nibh, lacinia at adipiscing scelerisque, accumsan eu justo. Nullam pulvinar, ligula egestas lobortis hendrerit, arcu dolor faucibus dolor, et accumsan enim dolor ac nibh. Nam id magna velit, in aliquet mauris. Sed facilisis convallis lacinia. Fusce id justo dolor. Duis sem mauris, dictum sit amet interdum at, dapibus ac mauris.
 
@@ -166,13 +163,13 @@ Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla 
   
   </div>
   <div id="main">
-      
   	Cras enim mauris, convallis consectetur mollis ac, pretium ut metus. Curabitur adipiscing erat at mauris condimentum nec laoreet turpis auctor. Nam euismod ante ac augue suscipit semper. Praesent nunc augue, fermentum quis feugiat non, iaculis a nisl. Cras luctus ipsum in eros faucibus commodo. Donec vehicula leo a tortor imperdiet a tincidunt massa fermentum. Sed luctus pretium sem, eu egestas magna sagittis in. Nam dapibus sem non ligula rutrum bibendum laoreet dui tempor. Morbi mollis, orci sed bibendum laoreet, dolor tortor elementum ipsum, vitae accumsan dolor leo sit amet velit. Fusce in nisi rutrum leo laoreet faucibus ac et lectus.
-
-<div>
-    <?php include("php_parse_xml.php"); ?>
-</div>    
-  </div>
+    <div>
+        <?php include("send_post.php"); ?>
+    </div>
+    <div>
+        <?php include("php_parse_xml.php"); ?>
+    </div>
   <div id="right">Content for id "right" Goes Here. This content is fixed".
       <div>
           <ul>
