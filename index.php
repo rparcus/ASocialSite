@@ -80,10 +80,27 @@
 	height: 40px;
 	width: 100%;
 	border-top: 1px solid rgb(63,189,237);
-	z-index:999;
-		
+	z-index:999;		
+}
+input{
+   color:#FFFFFF;
+   background-color:rgb(17,17,15);
+   border-style:solid;
+   border-color:rgb(63,189,237);
 }
 </style>
+<script language="javascript">
+function mouse_over_button(FRM,BTN)
+{
+   window.document.forms[FRM].elements[BTN].style.color = "rgb(63,189,237)";
+   window.document.forms[FRM].elements[BTN].style.borderColor = "rgb(17,17,15)";
+}
+function mouse_out_button(FRM,BTN)
+{
+   window.document.forms[FRM].elements[BTN].style.color = "white";
+   window.document.forms[FRM].elements[BTN].style.borderColor = "rgb(63,189,237)";
+}
+</script>
 </head>
 
 <body>
@@ -126,7 +143,7 @@
             echo '<form action="index.php" method="post" name="login">
                 User:<input name="username" type="text" size="10" maxlength="15" />&nbsp;
                 Password:<input name="password" type="password" size="10" maxlength="15" />&nbsp;
-                <input name="submit" type="submit" value="log in" />
+                <input name="submit" class="colored_button" type="submit" value="log in" onMouseOver="mouse_over_button(this.form.name,this.name)" onMouseOut="mouse_out_button(this.form.name,this.name)" />
                 </form>';
         }
         
