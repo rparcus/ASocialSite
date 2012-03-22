@@ -13,15 +13,25 @@ Usage and notes:
         
         Best regards,
         Robert
+
+        Hi,
+        Andrea
 --------------------------------------------------------------------------------
+
++Things we have to find out:
+- Master the holy technique of sessions and other advanced php functions.
+- I have yet to find out if theres a way to "embed" xml in php like linking it and 
+    making the page process it and its xsl inside a php page.
+    Functions to process an xml file exists in php and Ive added an example of 
+    how to do so to the repo, but I couldnt make it work with xml+xsl :(
 
 - Define a generic <div> node to hold "posts";
 - Find a way to host asocial website and wsdl online;
 - Define the database structure using some smart tool, like an automatic EER to
     database software. Also useful for documentation;
 
--
 - User authentication and user management modules needed;
 - Chat (if aproved);
 - Define website features to present;
 - Start documentation;
+- Can we stop writing in english? @Rob
