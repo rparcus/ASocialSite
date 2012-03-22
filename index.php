@@ -166,14 +166,12 @@ Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla 
   
   </div>
   <div id="main">
-  
-  			Content for  id "main" Goes Here
+      
   	Cras enim mauris, convallis consectetur mollis ac, pretium ut metus. Curabitur adipiscing erat at mauris condimentum nec laoreet turpis auctor. Nam euismod ante ac augue suscipit semper. Praesent nunc augue, fermentum quis feugiat non, iaculis a nisl. Cras luctus ipsum in eros faucibus commodo. Donec vehicula leo a tortor imperdiet a tincidunt massa fermentum. Sed luctus pretium sem, eu egestas magna sagittis in. Nam dapibus sem non ligula rutrum bibendum laoreet dui tempor. Morbi mollis, orci sed bibendum laoreet, dolor tortor elementum ipsum, vitae accumsan dolor leo sit amet velit. Fusce in nisi rutrum leo laoreet faucibus ac et lectus.
 
-Maecenas dignissim cursus metus et iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis metus tellus, consequat in pretium sit amet, tempus eu lorem. Quisque mollis feugiat magna, quis consectetur leo laoreet ac. Ut at dictum arcu. Integer posuere luctus varius. Donec quis enim dolor, non ultrices elit. Suspendisse tristique fringilla iaculis. Praesent ornare dui eget sapien lacinia fermentum bibendum turpis ornare. Aliquam erat volutpat. Etiam quam nulla, gravida in consectetur ac, consequat nec risus. Aliquam et mattis ante.
-
-Nam purus ante, varius in rutrum vitae, aliquam nec sem. Nullam lobortis dui eget libero tristique dictum. Nulla facilisi. Aenean neque justo, malesuada mollis fermentum id, viverra sed odio. Suspendisse accumsan varius tortor. Fusce nec lorem non quam volutpat sollicitudin vitae sed risus. Quisque faucibus congue iaculis.
-    
+<div>
+    <?php include("php_parse_xml.php"); ?>
+</div>    
   </div>
   <div id="right">Content for id "right" Goes Here. This content is fixed".
       <div>
