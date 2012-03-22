@@ -12,10 +12,10 @@ ini_set("soap.wsdl_cache_enabled", "0");
 try{
     $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
     $client = new SoapClient($wsdl, array('trace' => 1));
-    $function = "getPost";
+    $function = "updatePostXML";
     $params = array();
     $res = $client->__soapCall($function, $params);
-    echo "<h2>Test: " . $res->return . "</h2>";
+    echo "<h2>XML Updated: " . $res->return . "</h2>";
 } catch (Exception $e) {
 	echo $e->getMessage();
 }	

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link href="asocial_logo_gallo.jpg" rel="icon" title="Ascl" />
+<link href="asocial_icon.png" rel="icon" title="Ascl" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>A-Soc!aL</title>
@@ -10,7 +10,7 @@
 	background-color: rgb(17,17,15);
 	position: fixed;
 	width: 100%;
-	height: 10%;
+	height: 46px;
 	top: 0px;
 	left: 0px;
 	right: 0px;
@@ -39,6 +39,8 @@
 #logo {
 	position:absolute;
 	left:5em;
+        margin-top:auto;
+        margin-bottom:auto;
 }
 #main {
 	position: relative;
@@ -75,7 +77,7 @@
 	bottom: 0px;
 	left: 0px;
 	background-color: #000;
-	height: 9%;
+	height: 40px;
 	width: 100%;
 	border-top: 1px solid rgb(63,189,237);
 	z-index:999;
@@ -99,21 +101,21 @@
         if((isset($_POST['username']) && isset($_POST['password'])) &&
             $_POST['username'] != "" && $_POST['password'] != ""){
        try{
-        $wsdl = "http://127.0.0.1:8080/ASocioalApplication/ASocial?wsdl";
+        $wsdl = "http://localhost:8080/ASocialServer/ASocialService?wsdl";
         $client = new SoapClient($wsdl, array('trace' => 1));
-        $function = "login";
+        $function = "loginRequest";
         $user = $_POST['username'];
         $password = $_POST['password'];
         $params = array('username' =>$user,'password'=>$password);
         $tmp = $client->__soapCall($function, paramWrapper($params));
         $res = $tmp->return; 
         echo "risultato: ".$tmp->return.";<br/>";
-        if($res){
+        if($res=="Login effettuato!"){
             $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['username']));
             echo "WELCOME ".$user."!";
         }
         else{
-            echo "Invalid username or password or argument.";
+            echo "Invalid username or password.";
         }
         
         
@@ -156,10 +158,16 @@ Maecenas dignissim cursus metus et iaculis. Lorem ipsum dolor sit amet, consecte
 Nam purus ante, varius in rutrum vitae, aliquam nec sem. Nullam lobortis dui eget libero tristique dictum. Nulla facilisi. Aenean neque justo, malesuada mollis fermentum id, viverra sed odio. Suspendisse accumsan varius tortor. Fusce nec lorem non quam volutpat sollicitudin vitae sed risus. Quisque faucibus congue iaculis.
     
   </div>
-  <div id="right">Content for id "right" Goes Here. This content is "
-fixed".</div>  
+  <div id="right">Content for id "right" Goes Here. This content is fixed".
+      <div>
+          <ul>
+              <li><a href="login.php">Login</a></li>
+              <li><a href="send_post.php">Send Post</a></li>
+              <li><a href="update_xml_call.php">Update XML</a></li>
+          </ul>
+      </div>
+  </div>  
 </div>
-
 <div id="down">Content for id "down" Goes Here</div>
 
 </body>

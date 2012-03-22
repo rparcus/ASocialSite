@@ -10,6 +10,5 @@
         echo $post->post_body . "<hr/>";
     }
 ?>
-
 </body>
 </html>
