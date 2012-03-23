@@ -92,6 +92,9 @@ input, textarea{
 .tits{
     background-color:lightgrey;
 }
+.comm{
+    color:grey;
+}
 </style>
 <script language="javascript">
 function mouse_over_button(FRM,BTN)
