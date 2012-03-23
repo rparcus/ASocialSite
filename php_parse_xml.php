@@ -5,7 +5,7 @@
     $url="file.xml";
     $xml = simplexml_load_file($url);
     foreach($xml->post as $post){ ?>
-        <p class="tits"><?php echo $post->post_title; ?><p>
+        <p class="tits"><?php echo $post->post_title . " | post id: " . $post->post_id . "- user id: " . $post->user_id; ?><p>
         <p><?php echo $post->post_body; ?></p>
         <p><?php echo $post->post_date; ?></p>
         <?php

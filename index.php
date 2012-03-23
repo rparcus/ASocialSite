@@ -82,7 +82,7 @@
 	border-top: 1px solid rgb(63,189,237);
 	z-index:999;		
 }
-input, textarea {
+.coloredinput {
    color:#FFFFFF;
    background-color:rgb(17,17,15);
    border-style:solid;
@@ -145,7 +145,7 @@ function mouse_out_button(FRM,BTN)
             echo '<form action="index.php" method="post" name="login">
                 User:<input name="username" type="text" size="10" maxlength="15" />&nbsp;
                 Password:<input name="password" type="password" size="10" maxlength="15" />&nbsp;
-                <input name="submit" class="colored_button" type="submit" value="log in" onMouseOver="mouse_over_button(this.form.name,this.name)" onMouseOut="mouse_out_button(this.form.name,this.name)" />
+                <input name="submit" class="coloredinput" type="submit" value="log in" onMouseOver="mouse_over_button(this.form.name,this.name)" onMouseOut="mouse_out_button(this.form.name,this.name)" />
                 </form>';
         }
         
@@ -181,6 +181,7 @@ Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla 
           <ul>
               <li><a href="login.php">Login</a></li>
               <li><a href="send_post.php">Send Post</a></li>
+              <li><a href="send_comment.php">Send Comment</a></li>
               <li><a href="upload_file_form.php">Upload File</a></li>
               <li><a href="update_xml_call.php">Update XML</a></li>
               <li><a href="php_parse_xml.php">Parse XML</a></li>
