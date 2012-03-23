@@ -49,14 +49,17 @@
 	height:100%;
 	padding-left:3%;
 	padding-right:3%;
+        border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: rgb(63,189,237);
+        border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: rgb(63,189,237);
 }
 #left {
 	float:left;
 	height:100%;
 	width: 14%;
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-right-color: rgb(63,189,237);
 	padding-left:2%;
 	padding-right:2%;
 }
@@ -66,9 +69,6 @@
 	top:10%;
 	height:100%;
 	width: 18%;
-	border-left-width: 1px;
-	border-left-style: solid;
-	border-left-color: rgb(63,189,237);
 	padding-right:2%;
 	padding-left:2%;
 }
