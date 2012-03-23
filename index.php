@@ -89,6 +89,9 @@ input, textarea{
    border-style:solid;
    border-color:rgb(63,189,237);
 }
+.tits{
+    background-color:lightgrey;
+}
 </style>
 <script language="javascript">
 function mouse_over_button(FRM,BTN)
@@ -106,7 +109,7 @@ function mouse_out_button(FRM,BTN)
 
 <body>
 <div id="top_container">
-  <div id="logo"><img src="asocial_logo_gallo.jpg" width="150" height="46px" alt="logo" /></div>	
+  <div id="logo"><a href="index.php"><img src="asocial_logo_gallo.jpg" width="150" height="46px" alt="logo" /></a></div>	
   <div id="login">
 
   <?php
