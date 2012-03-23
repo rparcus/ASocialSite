@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php session_start(); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link href="asocial_icon.png" rel="icon" title="Ascl" />
@@ -125,7 +126,7 @@ function mouse_out_button(FRM,BTN)
         echo "risultato: ".$tmp->return.";<br/>";
         if($res=="Login effettuato!"){
             $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['username']));
-            echo "WELCOME ".$user."!";
+            echo "Welcome ".$user."!";
         }
         else{
             echo "Invalid username or password.";
