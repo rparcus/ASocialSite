@@ -1,5 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<?php session_start(); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link href="asocial_icon.png" rel="icon" title="Ascl" />
@@ -83,16 +82,16 @@
 	border-top: 1px solid rgb(63,189,237);
 	z-index:999;		
 }
-input, textarea{
+input, textarea {
    color:#FFFFFF;
    background-color:rgb(17,17,15);
    border-style:solid;
    border-color:rgb(63,189,237);
 }
-.tits{
+.tits {
     background-color:lightgrey;
 }
-.comm{
+.comm {
     color:grey;
 }
 </style>
