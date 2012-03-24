@@ -179,6 +179,7 @@ Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla 
   <div id="right">Content for id "right" Goes Here. This content is fixed".
       <div>
           <ul>
+              <li><a href="register.php">Register</a></li>
               <li><a href="login.php">Login</a></li>
               <li><a href="send_post.php">Send Post</a></li>
               <li><a href="send_comment.php">Send Comment</a></li>
