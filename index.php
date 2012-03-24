@@ -94,6 +94,92 @@
 .comm {
     color:grey;
 }
+
+.post_content{
+	position:relative;
+	width: 650px;
+}
+.image_block{
+	margin:20px;
+}
+.image{
+	float: left;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	border: thin solid rgb(63,189,237);
+}
+.post_inner_content{
+    border: thin solid rgb(247,247,247);
+}
+.post_author{
+	font-weight: bold;
+	left: 30px;
+        margin-bottom: 10px;
+}
+.post_title{
+	font-style: italic;
+	font-weight: bold;
+}
+.post_text{
+	margin-left: 5em;
+        margin-right: 1em;
+        padding:5px;
+        background-color:rgb(247,247,247);
+}
+.post_date{
+	font-size:10px;
+	text-align: right;
+	background-color: rgb(247,247,247);
+        margin-top:1em;
+}
+
+.comment_content{
+	position:relative;
+	width: 550px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.comment_image_block{
+	margin:20px;
+	position: relative;
+	left: 65px;
+}
+.comment_image{
+	float: left;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	border: thin solid rgb(63,189,237);	
+}
+.comment_inner_content{
+	border: thin solid rgb(247,247,247);	
+}
+.comment_author{
+	font-weight: bold;
+	left: 30px;
+	margin-bottom: 0px;
+}
+.comment_text{
+	margin-left: 3.5em;
+	margin-right: 1em;
+	padding:5px;
+	background-color:rgb(247,247,247);
+}
+.comment_date{
+	font-size:10px;
+	text-align: right;
+	position: absolute;
+	right: 2em;
+	top: 5px;
+}
+.comment_textarea {
+        margin-left:15em;
+        margin-top:0px;
+	border: thin solid rgb(230,230,230);
+}
 </style>
 <script language="javascript">
 function mouse_over_button(FRM,BTN)
