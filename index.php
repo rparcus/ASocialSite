@@ -180,6 +180,10 @@
         margin-top:0px;
 	border: thin solid rgb(230,230,230);
 }
+.post_textarea {
+        margin-top:0px;
+	border: thin solid rgb(230,230,230);
+}
 </style>
 <script language="javascript">
 function mouse_over_button(FRM,BTN)
@@ -255,10 +259,10 @@ Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla 
   
   </div>
   <div id="main">
-  	Cras enim mauris, convallis consectetur mollis ac, pretium ut metus. Curabitur adipiscing erat at mauris condimentum nec laoreet turpis auctor. Nam euismod ante ac augue suscipit semper. Praesent nunc augue, fermentum quis feugiat non, iaculis a nisl. Cras luctus ipsum in eros faucibus commodo. Donec vehicula leo a tortor imperdiet a tincidunt massa fermentum. Sed luctus pretium sem, eu egestas magna sagittis in. Nam dapibus sem non ligula rutrum bibendum laoreet dui tempor. Morbi mollis, orci sed bibendum laoreet, dolor tortor elementum ipsum, vitae accumsan dolor leo sit amet velit. Fusce in nisi rutrum leo laoreet faucibus ac et lectus.
     <div>
         <?php include("send_post.php"); ?>
     </div>
+      <hr/>
     <div>
         <?php include("php_parse_xml.php"); ?>
     </div>

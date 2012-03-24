@@ -5,8 +5,8 @@
 <body>
 <?php
 echo '<form name="post" action="send_post_call.php" method="post">
-		<p> <input class="comment_textarea" type="text" name="post_title" /> </p>
-		<p> <textarea class="comment_textarea" name="post_body"  cols="40" rows="5" /></textarea>
+		<p> <textarea class="post_textarea" cols="60" rows="1" name="post_title"></textarea> </p>
+		<p> <textarea class="post_textarea" name="post_body"  cols="60" rows="5" /></textarea>
 		<input type="submit" class="coloredinput" name="send_post_form" value="post" /> </p>
 	</form>';	
 ?>
