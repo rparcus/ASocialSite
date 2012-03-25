@@ -5,7 +5,9 @@
     include_once("send_comment.php");
     $url="file.xml";
     $xml = simplexml_load_file($url);
-    foreach($xml->post as $post){ ?>
+    foreach($xml->post as $post){
+        $anchor="postn".$post->post_id;
+        echo '<a name="'.$anchor.'"></a>' ?>        
         <div class="post_content">
                 <div class="image_block">
                 <div class="image"><img src="avatar.jpg" /></div>

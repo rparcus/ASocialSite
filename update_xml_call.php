@@ -15,7 +15,7 @@ try{
     $function = "updatePostXML";
     $params = array();
     $res = $client->__soapCall($function, $params);
-    echo "<h2>XML Updated: " . $res->return . "</h2>";
+    //echo "<h2>XML Updated: " . $res->return . "</h2>";
 } catch (Exception $e) {
 	echo $e->getMessage();
 }	

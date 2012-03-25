@@ -144,7 +144,7 @@
 .comment_image_block{
 	margin:20px;
 	position: relative;
-	left: 65px;
+	left: 100px;
 }
 .comment_image{
 	float: left;
@@ -181,8 +181,12 @@
 	border: thin solid rgb(230,230,230);
 }
 .post_textarea {
-        margin-top:0px;
+        margin:0px;
 	border: thin solid rgb(230,230,230);
+}
+iframe{
+    position:relative;
+    z-index:998;
 }
 </style>
 <script language="javascript">
@@ -233,8 +237,8 @@ function mouse_out_button(FRM,BTN)
         }
         }else{
             echo '<form action="index.php" method="post" name="login">
-                User:<input name="username" type="text" size="10" maxlength="15" />&nbsp;
-                Password:<input name="password" type="password" size="10" maxlength="15" />&nbsp;
+                User:<input class="post_textarea" name="username" type="text" size="10" maxlength="15" />&nbsp;
+                Password:<input class="post_textarea" name="password" type="password" size="10" maxlength="15" />&nbsp;
                 <input name="submit" class="coloredinput" type="submit" value="log in" onMouseOver="mouse_over_button(this.form.name,this.name)" onMouseOut="mouse_out_button(this.form.name,this.name)" />
                 </form>';
         }
@@ -253,10 +257,7 @@ function mouse_out_button(FRM,BTN)
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies posuere lobortis. Suspendisse potenti. Nunc non imperdiet leo. Donec fermentum purus ac diam mollis quis pulvinar turpis lacinia. Aliquam ut augue augue. Cras non ante vel lectus convallis tincidunt accumsan quis lorem. Vestibulum tempor urna sed nibh semper eget vehicula massa sagittis. Nam sem nibh, lacinia at adipiscing scelerisque, accumsan eu justo. Nullam pulvinar, ligula egestas lobortis hendrerit, arcu dolor faucibus dolor, et accumsan enim dolor ac nibh. Nam id magna velit, in aliquet mauris. Sed facilisis convallis lacinia. Fusce id justo dolor. Duis sem mauris, dictum sit amet interdum at, dapibus ac mauris.
 
 Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla quam, aliquam aliquam velit posuere id. Sed at nisl ante, id gravida velit. Donec pellentesque enim et mauris placerat quis feugiat nisi vestibulum. Nunc id leo felis. Aliquam sit amet odio in augue vestibulum dignissim. Nunc sit amet enim quis erat accumsan auctor. Cras fringilla, nisi et laoreet porta, felis ipsum pretium libero, eu consequat nunc massa vitae enim. Duis nibh tortor, malesuada vitae commodo at, malesuada et felis. Quisque sed vestibulum dui. Nullam ac mauris nunc. Morbi ut justo ligula, non hendrerit urna.
-
-
-  
-  
+ 
   </div>
   <div id="main">
     <div>
