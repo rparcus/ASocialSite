@@ -97,7 +97,7 @@
 
 .post_content{
 	position:relative;
-	width: 650px;
+	width: 100%;
 }
 .image_block{
 	margin:20px;
@@ -137,7 +137,9 @@
 
 .comment_content{
 	position:relative;
-	width: 550px;
+	width: 70%;
+        float:right;
+        right:14%;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
