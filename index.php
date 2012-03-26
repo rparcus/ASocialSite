@@ -51,10 +51,10 @@
 	padding-right:3%;
         border-left-width: 1px;
 	border-left-style: solid;
-	border-left-color: rgb(63,189,237);
+	border-left-color: rgb(230,230,230);
         border-right-width: 1px;
 	border-right-style: solid;
-	border-right-color: rgb(63,189,237);
+	border-right-color: rgb(230,230,230);
 }
 #left {
 	float:left;
@@ -188,6 +188,13 @@ iframe{
     position:relative;
     z-index:998;
 }
+hr{
+    border: 0;
+    width: 100%;
+    color: rgb(230,230,230);
+    background-color: rgb(230,230,230);
+    height: 1px;
+}
 </style>
 <script language="javascript">
 function mouse_over_button(FRM,BTN)
@@ -266,6 +273,7 @@ Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla 
       <hr/>
     <div>
         <?php include("php_parse_xml.php"); ?>
+        <br/><br/><br/><br/>
     </div>
   <div id="right">Content for id "right" Goes Here. This content is fixed".
       <div>
