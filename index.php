@@ -25,49 +25,9 @@ function mouse_out_button(FRM,BTN)
 </head>
 
 <body>
-<div id="top_container">
-  <div id="logo"><a href="index.php"><img src="asocial_logo_gallo.jpg" width="150" height="46px" alt="logo" /></a></div>	
-  <div id="login">
 
-  <?php
-    require_once("param_wrapper.php");
-            
-        if((isset($_POST['username']) && isset($_POST['password'])) &&
-            $_POST['username'] != "" && $_POST['password'] != ""){
-       try{
-        $wsdl = "http://localhost:8080/ASocialServer/ASocialService?wsdl";
-        $client = new SoapClient($wsdl, array('trace' => 1));
-        $function = "loginRequest";
-        $user = $_POST['username'];
-        $password = $_POST['password'];
-        $params = array('username' =>$user,'password'=>$password);
-        $tmp = $client->__soapCall($function, paramWrapper($params));
-        $res = $tmp->return; 
-        echo "risultato: ".$tmp->return.";<br/>";
-        if($res>0){
-            $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['res']));
-            echo "Welcome ".$user."!";
-        }
-        else{
-            echo "Invalid username or password.";
-        }
-        
-        
-        } catch (Exception $e){
-        echo $e->getMessage();
-        }
-        }else{
-            echo '<form action="index.php" method="post" name="login">
-                User:<input class="post_textarea" name="username" type="text" size="10" maxlength="15" />&nbsp;
-                Password:<input class="post_textarea" name="password" type="password" size="10" maxlength="15" />&nbsp;
-                <input name="submit" class="coloredinput" type="submit" value="log in" onMouseOver="mouse_over_button(this.form.name,this.name)" onMouseOut="mouse_out_button(this.form.name,this.name)" />
-                </form>';
-        }
-        
-        
-        ?>
-  
-  </div>
+<div>
+	<?php include_once("topmenu.php"); ?>
 </div>
 
 <div id="body_container">
