@@ -12,6 +12,19 @@ function paramWrapper ($parameters){
     return array('parameters' => $parameters);
 }
 
+
+/*  controlla che la combinazione unica nomeutente->password sia presente nel db
+ *  restituisce -1 con un errore o in caso di password sbagliata.
+ */
+function checkPassword($username, $password){
+    $wsdl = "http://localhost:8080/ASocialServer/ASocialService?wsdl";
+    $client = new SoapClient($wsdl, array('trace' => 1));
+    $function = "loginRequest";
+    $params = array('username' =>$username,'password'=>$password);
+    $tmp = $client->__soapCall($function, paramWrapper($params));
+    return $tmp->return; 
+}
+
 /*
  * beh.. stampa il form di login
  * -1 per stampare un messaggio di errore standard. Altri numeri per form 
@@ -34,16 +47,9 @@ function printLoginForm($value){
     }
     
 }
-/*  controlla che la combinazione unica nomeutente->password sia presente nel db
- *  restituisce -1 con un errore o in caso di password sbagliata.
- */
-function checkPassword($username, $password){
-    $wsdl = "http://localhost:8080/ASocialServer/ASocialService?wsdl";
-    $client = new SoapClient($wsdl, array('trace' => 1));
-    $function = "loginRequest";
-    $params = array('username' =>$username,'password'=>$password);
-    $tmp = $client->__soapCall($function, paramWrapper($params));
-    return $tmp->return; 
+
+function logOut(){
+    //session;
 }
 
 function getUsername($userID){

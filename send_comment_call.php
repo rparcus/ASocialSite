@@ -15,7 +15,8 @@ try{
     $params = array('userID' => 1, 'postID' => $_POST['post_id'], 'commentBody' => $_POST['comment_body']);
     $res = $client->__soapCall($function, paramWrapper($params));
     //echo "<h2>Invio: " . $res->return . "</h2>";
-    header("location: index.php#postn".$_POST['post_id']);
+    //header("location: index.php#postn".$_POST['post_id']);
+    header("location: index.php");
 } catch (Exception $e) {
 	echo $e->getMessage();
 }	
