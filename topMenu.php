@@ -20,16 +20,7 @@
   <div id="login">
 
   <?php
-    require_once("param_wrapper.php");
-    
-    function checkPassword($username, $password){
-        $wsdl = "http://localhost:8080/ASocialServer/ASocialService?wsdl";
-        $client = new SoapClient($wsdl, array('trace' => 1));
-        $function = "loginRequest";
-        $params = array('username' =>$username,'password'=>$password);
-        $tmp = $client->__soapCall($function, paramWrapper($params));
-        return $tmp->return; 
-    }
+    require_once("helper.php");
             
         if((isset($_POST['username']) && isset($_POST['password'])) &&
             $_POST['username'] != "" && $_POST['password'] != ""){
