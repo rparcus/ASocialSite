@@ -21,19 +21,21 @@
 
   <?php
     require_once("param_wrapper.php");
-            
-        if((isset($_POST['username']) && isset($_POST['password'])) &&
-            $_POST['username'] != "" && $_POST['password'] != ""){
-       try{
+    
+    function checkPassword($username, $password){
         $wsdl = "http://localhost:8080/ASocialServer/ASocialService?wsdl";
         $client = new SoapClient($wsdl, array('trace' => 1));
         $function = "loginRequest";
-        $user = $_POST['username'];
-        $password = $_POST['password'];
-        $params = array('username' =>$user,'password'=>$password);
+        $params = array('username' =>$username,'password'=>$password);
         $tmp = $client->__soapCall($function, paramWrapper($params));
-        $res = $tmp->return; 
-        echo "risultato: ".$tmp->return.";<br/>";
+        return $tmp->return; 
+    }
+            
+        if((isset($_POST['username']) && isset($_POST['password'])) &&
+            $_POST['username'] != "" && $_POST['password'] != ""){
+       try{ 
+        $res = checkPassword($_POST['username'], $_POST['password']);
+        echo "risultato: ".$res.";<br/>";
         if($res>0){
             $_SESSION['name'] = stripslashes(htmlspecialchars($res));
             echo "Welcome ".$user."!";
