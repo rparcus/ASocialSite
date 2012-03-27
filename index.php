@@ -35,8 +35,8 @@ function mouse_out_button(FRM,BTN)
   <div id="left">
   <?php include_once("update_xml_call.php"); ?>
   <?php
-    if(isset($_SESSION["name"])){
-        echo "la sessione è la numero:".$_SESSION["name"]."</br>";  
+    if(isset($_SESSION["username"])){
+        echo "la sessione è la numero:".$_SESSION["username"]."</br>";  
     }
     else{
         echo "la sessione NON è stata inizializzata";

@@ -7,7 +7,7 @@
             $res = checkPassword($_POST['username'], $_POST['password']);
             //se user e pass sono giusti...
             if($res>0){
-                $_SESSION['name'] = stripslashes(htmlspecialchars($res));
+                $_SESSION['username'] = stripslashes(htmlspecialchars($res));
                 echo "Ben venuto ".$res."!(^__^)!";
             }
             else{

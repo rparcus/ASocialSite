@@ -49,7 +49,7 @@ function printLoginForm($value){
 }
 
 function logOut(){
-    //session;
+    unset($_SESSION["username"]);
 }
 
 function getUsername($userID){
