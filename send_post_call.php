@@ -5,7 +5,7 @@
 <body>
 
 <?php
-require_once("param_wrapper.php");
+require_once("helper.php");
 
 ini_set("soap.wsdl_cache_enabled", "0");
 try{
