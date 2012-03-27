@@ -5,21 +5,23 @@
             $_POST['username'] != "" && $_POST['password'] != ""){
        try{ 
             $res = checkPassword($_POST['username'], $_POST['password']);
-            //echo "risultato: ".$res.";<br/>";
+            //se user e pass sono giusti...
             if($res>0){
                 $_SESSION['name'] = stripslashes(htmlspecialchars($res));
-                echo "Welcome ".$res."!";
+                echo "Ben venuto ".$res."!(^__^)!";
             }
             else{
-                printLoginForm();
-                //echo "Invalid username or password.";
+                //Invalid username or password.
+                printLoginForm(-1);
+
             }
          
         } catch (Exception $e){
         echo $e->getMessage();
         }
         }else{
-            printLoginForm();
+            //normal login
+            printLoginForm(0);
         }
     }else{
       echo "Ben venuto toro!Il nostro grande user 1 (^__^)";
