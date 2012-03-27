@@ -18,6 +18,7 @@ function paramWrapper ($parameters){
  */
 function printLoginForm(){
     echo '<form action="index.php" method="post" name="login">
+                <span style="color:red">(Username o password sbagliati)</span>
                 User:<input class="post_textarea" name="username" type="text" size="10" maxlength="15" />&nbsp;
                 Password:<input class="post_textarea" name="password" type="password" size="10" maxlength="15" />&nbsp;
                 <input name="submit" class="coloredinput" type="submit" value="log in" onMouseOver="mouse_over_button(this.form.name,this.name)" onMouseOut="mouse_out_button(this.form.name,this.name)" />
@@ -42,7 +43,7 @@ function getUsername($userID){
      */
 }
 
-function checkWichSessio($userID){
+function checkWichSession($userID){
     /*
      * Prende in input userID e dice se quella sessione è attiva o meno
      * 

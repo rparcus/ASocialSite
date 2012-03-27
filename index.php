@@ -23,7 +23,7 @@ function mouse_out_button(FRM,BTN)
 <body>
 
 <div>
-	<?php include_once("topmenu.php"); ?>
+	<?php include("topmenu.php"); ?>
 </div>
 
 <div id="body_container">
