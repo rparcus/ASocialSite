@@ -49,6 +49,7 @@ function mouse_out_button(FRM,BTN)
     <div>
         <?php include("php_parse_xml.php"); ?>
     </div>
+    <div id="right">
       <div>
           <ul>
               <li><a href="register.php">Register</a></li>
@@ -60,6 +61,7 @@ function mouse_out_button(FRM,BTN)
               <li><a href="php_parse_xml.php">Parse XML</a></li>
           </ul>
       </div>
+    </div>
   </div>  
 </div>
 <div id="down" style="color:white; text-align:right; font-size:10px;"><br/>A-Soc!al ©2012 FARP corp - all rights reserved.</div>
