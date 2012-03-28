@@ -46,7 +46,7 @@
 	position: relative;
 	width: 50%;
 	float: left;
-	height:100%;
+        min-height:1200px;
 	padding-left:3%;
 	padding-right:3%;
         border-left-width: 7px;
