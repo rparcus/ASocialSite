@@ -179,10 +179,15 @@
         margin-left:15em;
         margin-top:0px;
 	border: thin solid rgb(230,230,230);
+        width:60%;
 }
 .post_textarea {
         margin:0px;
         width:100%;
+	border: thin solid rgb(230,230,230);
+}
+.login_textarea {
+        margin:0px;
 	border: thin solid rgb(230,230,230);
 }
 iframe{
