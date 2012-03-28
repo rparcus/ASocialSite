@@ -24,8 +24,7 @@
             printLoginForm(0);
         }
     }else{
-        $logout="logOut()";
-        echo '<a href=\"'.$logout.'\">logout</a>';
+        echo '<a href="logout.php">logout</a>';
     }
         
         
