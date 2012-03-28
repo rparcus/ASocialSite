@@ -27,25 +27,20 @@ function mouse_out_button(FRM,BTN)
 <body>
 
 <div>
-	<?php include("menu_top.php"); ?>
+    <?php include("menu_top.php"); ?>
 </div>
 
 <div id="body_container">
 
   <div id="left">
-  <?php
-    if(isset($_SESSION["username"])){
-        echo "la sessione è la numero:".$_SESSION["username"]."</br>";  
-    }
-    else{
-        echo "la sessione NON è stata inizializzata";
-    }
-?>
-  
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies posuere lobortis. Suspendisse potenti. Nunc non imperdiet leo. Donec fermentum purus ac diam mollis quis pulvinar turpis lacinia. Aliquam ut augue augue. Cras non ante vel lectus convallis tincidunt accumsan quis lorem. Vestibulum tempor urna sed nibh semper eget vehicula massa sagittis. Nam sem nibh, lacinia at adipiscing scelerisque, accumsan eu justo. Nullam pulvinar, ligula egestas lobortis hendrerit, arcu dolor faucibus dolor, et accumsan enim dolor ac nibh. Nam id magna velit, in aliquet mauris. Sed facilisis convallis lacinia. Fusce id justo dolor. Duis sem mauris, dictum sit amet interdum at, dapibus ac mauris.
-
-Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla quam, aliquam aliquam velit posuere id. Sed at nisl ante, id gravida velit. Donec pellentesque enim et mauris placerat quis feugiat nisi vestibulum. Nunc id leo felis. Aliquam sit amet odio in augue vestibulum dignissim. Nunc sit amet enim quis erat accumsan auctor. Cras fringilla, nisi et laoreet porta, felis ipsum pretium libero, eu consequat nunc massa vitae enim. Duis nibh tortor, malesuada vitae commodo at, malesuada et felis. Quisque sed vestibulum dui. Nullam ac mauris nunc. Morbi ut justo ligula, non hendrerit urna.
- 
+    <?php
+        if(isset($_SESSION["username"])){
+            echo "sessione #".$_SESSION["username"]."</br>";  
+        }
+        else{
+            echo "sessione non inizializzata";
+        }
+    ?>
   </div>
   <div id="main">
     <div id="send_post_div">
@@ -54,7 +49,6 @@ Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla 
     <div>
         <?php include("php_parse_xml.php"); ?>
     </div>
-  <div id="right">Content for id "right" Goes Here. This content is fixed".
       <div>
           <ul>
               <li><a href="register.php">Register</a></li>
@@ -68,7 +62,7 @@ Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla 
       </div>
   </div>  
 </div>
-<div id="down">Content for id "down" Goes Here</div>
+<div id="down" style="color:white; text-align:right; font-size:10px;"><br/>A-Soc!al ©2012 FARP corp - all rights reserved.</div>
 
 </body>
 </html>
