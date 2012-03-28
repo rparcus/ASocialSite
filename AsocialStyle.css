@@ -188,5 +188,10 @@ iframe{
     position:relative;
     z-index:998;
 }
+#send_post_div{
+        border-bottom-width: 7px;
+	border-bottom-style: solid;
+	border-bottom-color: rgb(247,247,247);
+}
 
 

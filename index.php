@@ -49,10 +49,9 @@ Nullam id nibh nisi. Praesent vel lectus libero. Maecenas consectetur fringilla 
  
   </div>
   <div id="main">
-    <div>
+    <div id="send_post_div">
         <?php include("send_post.php"); ?>
     </div>
-      <hr/>
     <div>
         <?php include("php_parse_xml.php"); ?>
     </div>
