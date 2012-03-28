@@ -33,7 +33,6 @@ function mouse_out_button(FRM,BTN)
 <div id="body_container">
 
   <div id="left">
-  <?php include_once("update_xml_call.php"); ?>
   <?php
     if(isset($_SESSION["username"])){
         echo "la sessione è la numero:".$_SESSION["username"]."</br>";  

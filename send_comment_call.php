@@ -16,6 +16,7 @@ try{
     $res = $client->__soapCall($function, paramWrapper($params));
     //echo "<h2>Invio: " . $res->return . "</h2>";
     //header("location: index.php#postn".$_POST['post_id']);
+    include_once("update_xml_call.php");
     header("location: index.php");
 } catch (Exception $e) {
 	echo $e->getMessage();

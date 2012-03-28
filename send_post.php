@@ -4,9 +4,9 @@
 </head>
 <body>
 <form name="post_form" action="send_post_call.php" method="post">
-    <p><textarea class="post_textarea" cols="60" rows="1" name="post_title"></textarea></p>
-    <p><textarea class="post_textarea" name="post_body"  cols="60" rows="5" /></textarea>
-    <a href="#" onClick="document.post_form.submit()"><img src="send.jpg" height="20" width="45"/></a></p>
+    <p><textarea class="post_textarea" rows="1" name="post_title"></textarea></p>
+    <p><textarea class="post_textarea" name="post_body" rows="5" /></textarea>
+    <a href="#" style="float:right;" onClick="document.post_form.submit()"><img src="send.jpg" height="20" width="45"/></a></p>
     <input type="hidden" name="user_id" value="<?php echo "".$_SESSION['username']; ?>"/>
 </form>
 </body>

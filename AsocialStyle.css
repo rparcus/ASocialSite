@@ -182,6 +182,7 @@
 }
 .post_textarea {
         margin:0px;
+        width:100%;
 	border: thin solid rgb(230,230,230);
 }
 iframe{
@@ -192,6 +193,9 @@ iframe{
         border-bottom-width: 7px;
 	border-bottom-style: solid;
 	border-bottom-color: rgb(247,247,247);
+        position:relative;
+        margin-left:0px;
+        margin-right:0px;
 }
 
 
