@@ -8,6 +8,7 @@
 		<p><textarea class="comment_textarea" name="comment_body" cols="40" rows="1"></textarea>
 		<input class="coloredinput" type="submit"/></p>
                 <input type="hidden" name="post_id" value="<?php echo "".$pid; ?>"/>
+                <input type="hidden" name="user_id" value="<?php echo "".$_SESSION['username']; ?>"/>
 	</form>
 <?php } // <a href="#" onClick="document.comment_form.submit()"><img src="send.jpg" height="20" width="45"/></a> ?>
 </body>

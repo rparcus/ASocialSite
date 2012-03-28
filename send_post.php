@@ -7,6 +7,7 @@
     <p><textarea class="post_textarea" cols="60" rows="1" name="post_title"></textarea></p>
     <p><textarea class="post_textarea" name="post_body"  cols="60" rows="5" /></textarea>
     <a href="#" onClick="document.post_form.submit()"><img src="send.jpg" height="20" width="45"/></a></p>
+    <input type="hidden" name="user_id" value="<?php echo "".$_SESSION['username']; ?>"/>
 </form>
 </body>
 </html>

@@ -11,7 +11,7 @@ function getComment($pid){
     	<div class="comment_image"><img src="avatar.jpg" width="40" height="40"/></div>
     	<div class="comment_inner_content">
         	<div>
-                    <div class="comment_author"><?php echo 'user_id: '.$comm->user_id; ?></div>
+                    <div class="comment_author"><?php echo $comm->username; ?></div>
                     <div class="comment_date"><?php echo $comm->comment_date; ?></div>
                 </div>
             <div class="comment_text"><?php echo $comm->comment_body; ?></div>  

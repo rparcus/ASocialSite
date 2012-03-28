@@ -12,7 +12,7 @@
                 <div class="image_block">
                 <div class="image"><img src="avatar.jpg" /></div>
               <div class="post_inner_content">
-                        <div class="post_author"><?php echo "user_id: ".$post->user_id;?></div>
+                        <div class="post_author"><?php echo $post->username;?></div>
                         <div class="post_title"><?php echo $post->post_title;?></div>
                         <div class="post_text"><?php echo $post->post_body;?></div>
                 <div class="post_date"><?php echo $post->post_date; ?></div>
