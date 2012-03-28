@@ -8,7 +8,7 @@
             //se user e pass sono giusti...
             if($res>0){
                 $_SESSION['username'] = stripslashes(htmlspecialchars($res));
-                echo "Ben venuto ".$res."!(^__^)!";
+                echo "user_id: ".$res.' <a href="logout.php">logout</a>';
             }
             else{
                 //Invalid username or password.
