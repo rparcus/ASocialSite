@@ -8,7 +8,9 @@
     <div class="send_comment_form">
         <div class="send_comment_content">
             <textarea class="comment_textarea" name="comment_body" rows="1"></textarea>
-            <div class="comment_submit"><input class="coloredinput" type="submit"/></div>
+            <div class="comment_submit">
+                <input class="send_button" type="submit" name="send_comment" value="send">
+            </div>
         </div>
     </div>
         <input type="hidden" name="post_id" value="<?php echo "".$pid; ?>"/>

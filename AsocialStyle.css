@@ -203,8 +203,7 @@ iframe{
 .send_comment_content{
 	position:relative;
 	width: 68%;
-        margin-left:22%;
-        background-color:yellow;
+        margin-left:21.5%;
 }
 .comment_submit{
     position:absolute;
@@ -230,6 +229,28 @@ a:active {
 }
 a:hover {
     color:rgb(23,169,217);
+}
+.send_button {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f0f0f0), color-stop(1, #e6e6e6) );
+	background:-moz-linear-gradient( center top, #f0f0f0 5%, #e6e6e6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#e6e6e6');
+	background-color:#f0f0f0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:Verdana;
+	font-size:10px;
+	font-weight:normal;
+	padding:4px 4px;
+	text-decoration:none;
+}.send_button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e6e6e6), color-stop(1, #f0f0f0) );
+	background:-moz-linear-gradient( center top, #e6e6e6 5%, #f0f0f0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6e6e6', endColorstr='#f0f0f0');
+	background-color:#e6e6e6;
+}.send_button:active {
+	position:relative;
+	top:1px;
 }
 
 
