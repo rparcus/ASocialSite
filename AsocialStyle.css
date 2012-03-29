@@ -176,10 +176,9 @@
 	top: 5px;
 }
 .comment_textarea {
-        margin-left:15em;
-        margin-top:0px;
+        margin:0px;
 	border: thin solid rgb(230,230,230);
-        width:60%;
+        width:100%;
 }
 .post_textarea {
         margin:0px;
@@ -193,6 +192,24 @@
 iframe{
     position:relative;
     z-index:998;
+}
+.send_comment_form{
+	position:relative;
+	width: 100%;
+        height:2em;
+	margin: 0px;
+        top:-0.8em;
+}
+.send_comment_content{
+	position:relative;
+	width: 68%;
+        margin-left:22%;
+        background-color:yellow;
+}
+.comment_submit{
+    position:absolute;
+    top:-4px;
+    right:-3em;
 }
 #send_post_div{
         border-bottom-width: 7px;

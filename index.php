@@ -49,6 +49,7 @@ function mouse_out_button(FRM,BTN)
     <div>
         <?php include("php_parse_xml.php"); ?>
     </div>
+      <div style="height:10em;"></div>
     <div id="right">
       <div>
           <ul>
