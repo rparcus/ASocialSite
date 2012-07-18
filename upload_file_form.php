@@ -1,5 +1,7 @@
 <html>
 <body>
+    
+    <?php session_start(); ?>
 
 <form action="upload_file.php" method="post"
 enctype="multipart/form-data">
