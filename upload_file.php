@@ -33,6 +33,22 @@ if ((($_FILES["file"]["type"] == "image/gif")
       move_uploaded_file($_FILES["file"]["tmp_name"],
       $folder. "/" . $_SESSION["username"] . str_replace("image/", ".", $_FILES["file"]["type"]));
       echo "Stored in: " . $folder. "/" . $_SESSION["username"] . str_replace("image/", ".", $_FILES["file"]["type"]);
+
+//require_once("helper.php");      
+//ini_set("soap.wsdl_cache_enabled", "0");
+//try{
+//    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+//    $client = new SoapClient($wsdl, array('trace' => 1));
+//    $function = "resizeAvatar";
+//    $params = array('url' => "http://localhost:9090/ASocialClient/avatar/2.png");//$folder. "/" . $_SESSION["username"] . str_replace("image/", ".", $_FILES["file"]["type"]));
+//    $res = $client->__soapCall($function, paramWrapper($params));
+//    
+//    echo $res;
+    
+} catch (Exception $e) {
+	echo $e->getMessage();
+}	
+
 //      }
     }
   }
@@ -42,8 +58,10 @@ else
   }
 ?>
 
-<!--$_FILES["file"]["name"] - the name of the uploaded file
+<!--
+$_FILES["file"]["name"] - the name of the uploaded file
 $_FILES["file"]["type"] - the type of the uploaded file
 $_FILES["file"]["size"] - the size in bytes of the uploaded file
 $_FILES["file"]["tmp_name"] - the name of the temporary copy of the file stored on the server
-$_FILES["file"]["error"] - the error code resulting from the file upload-->
+$_FILES["file"]["error"] - the error code resulting from the file upload
+-->
