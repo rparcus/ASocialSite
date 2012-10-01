@@ -3,6 +3,14 @@
 	<title>Register call result</title>
 </head>
 <body>
+    
+    <?php session_start(); ?>
+    
+    <div>
+        <?php include("menu_top.php"); ?>
+    </div>
+
+    <div id="body_container">
 
 <?php
 require_once("helper.php");
@@ -19,6 +27,7 @@ try{
 	echo $e->getMessage();
 }	
 ?>
+    </div>
 
 </body>
 </html>

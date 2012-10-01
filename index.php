@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require_once("helper.php");
+    ini_set("soap.wsdl_cache_enabled", "0");
     print_r ($_SESSION);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -33,14 +35,7 @@ function mouse_out_button(FRM,BTN)
 <div id="body_container">
 
   <div id="left">
-    <?php
-        if(isset($_SESSION["username"])){
-            echo "sessione #".$_SESSION["username"]."</br>";  
-        }
-        else{
-            echo "sessione non inizializzata";
-        }
-    ?>
+      <?php include("leftProfile.php"); ?>
   </div>
   <div id="main">
     <div id="send_post_div">
@@ -57,7 +52,8 @@ function mouse_out_button(FRM,BTN)
               <li><a href="login.php">Login</a></li>
               <li><a href="send_post.php">Send Post</a></li>
               <li><a href="send_comment.php">Send Comment</a></li>
-              <li><a href="upload_file_form.php">Upload File</a></li>
+              <li><a href="upload_file_form.php">Upload Avatar</a></li>
+              <li><a href="upload_file_form.php">Resize my Avatar</a></li>
               <li><a href="update_xml_call.php">Update XML</a></li>
               <li><a href="php_parse_xml.php">Parse XML</a></li>
           </ul>

@@ -7,6 +7,8 @@
  * 
  */
 
+ini_set("soap.wsdl_cache_enabled", "0");
+
 //agrega i parametri da inviare al WSDL come elementXML 'parameters'
 function paramWrapper ($parameters){
     return array('parameters' => $parameters);
@@ -17,12 +19,37 @@ function paramWrapper ($parameters){
  *  restituisce -1 con un errore o in caso di password sbagliata.
  */
 function checkPassword($username, $password){
-    $wsdl = "http://localhost:8080/ASocialServer/ASocialService?wsdl";
-    $client = new SoapClient($wsdl, array('trace' => 1));
+    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+    $client = @new SoapClient($wsdl, array('trace' => 1));
     $function = "loginRequest";
     $params = array('username' =>$username,'password'=>$password);
     $tmp = $client->__soapCall($function, paramWrapper($params));
     return $tmp->return; 
+}
+
+/*  Prende in input un l'indirizzo assoluto di una immagine e un bool. Se
+ *  settato a 1, fa un resize dell'immagine fino a portala a 50x50px.
+ *  Cancella l'immagine originale senza lasciare copia, per ora.
+ *  Se il bool va a zero, usa un algoritmo un po' più veloce, ma di qualità
+ *  inferiore (più leggero sul server).
+ * 
+ */
+function avatarResize($image, $HD){
+    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+    $client = @new SoapClient($wsdl, array('trace' => 1));
+    $function = "resizeImmage";
+    $params = array('image'=>$image,'HD'=>$HD);
+    $tmp = $client->__soapCall($function, paramWrapper($params));
+    return $tmp->return;
+}
+
+function setAvatar($userID){
+    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+    $client = @new SoapClient($wsdl, array('trace' => 1));
+    $function = "setAvatar";
+    $params = array('userID'=>$userID);
+    $tmp = $client->__soapCall($function, paramWrapper($params));
+    return $tmp->return;
 }
 
 /*
@@ -53,10 +80,16 @@ function logOut(){
 }
 
 function getUsername($userID){
-    
-    /*
-     * qui ci va una funziona che mette in input userID, e ottiene lo userName
-     */
+    try{
+        $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+        $client = @new SoapClient($wsdl, array('trace' => 1));
+        $function = "getUserName";
+        $params = array('userID'=>$userID);
+        $tmp = $client->__soapCall($function, paramWrapper($params));
+        return $tmp->return;
+    }catch (Exception $e) {
+	echo $e->getMessage();
+    }
 }
 
 function checkWichSession($userID){

@@ -14,7 +14,7 @@ try{
     $function = "setComment";
     $params = array('userID' => $_POST['user_id'], 'postID' => $_POST['post_id'], 'commentBody' => $_POST['comment_body']);
     $res = $client->__soapCall($function, paramWrapper($params));
-    //echo "<h2>Invio: " . $res->return . "</h2>";
+    echo "<h2>Invio: " . $res->return . "</h2>";
     //header("location: index.php#postn".$_POST['post_id']);
     include_once("update_xml_call.php");
     header("location: index.php");

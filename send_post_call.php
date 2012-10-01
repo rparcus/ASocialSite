@@ -14,7 +14,7 @@ try{
     $function = "setPost";
     $params = array('postTitle' => $_POST['post_title'], 'postBody' => $_POST['post_body'], 'userID' => $_POST['user_id']);
     $res = $client->__soapCall($function, paramWrapper($params));
-    //echo "<h2>Invio: " . $res->return . "</h2>";
+    echo "<h2>Invio: " . $res->return . "</h2>";
     //header("location: index.php#postn".$_POST['post_id']);
     include_once("update_xml_call.php");
     header("location: index.php");
