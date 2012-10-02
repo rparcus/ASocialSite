@@ -8,6 +8,11 @@
  */
 
 ini_set("soap.wsdl_cache_enabled", "0");
+//Rob's wsdl
+$wsdl = "http://127.0.0.1:8081/ASocialServer/ASocialService?wsdl";
+//Forg's wsdl
+//$wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+
 
 //agrega i parametri da inviare al WSDL come elementXML 'parameters'
 function paramWrapper ($parameters){
@@ -19,7 +24,7 @@ function paramWrapper ($parameters){
  *  restituisce -1 con un errore o in caso di password sbagliata.
  */
 function checkPassword($username, $password){
-    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+    global $wsdl;
     $client = @new SoapClient($wsdl, array('trace' => 1));
     $function = "loginRequest";
     $params = array('username' =>$username,'password'=>$password);
@@ -35,7 +40,7 @@ function checkPassword($username, $password){
  * 
  */
 function avatarResize($image, $HD){
-    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+    global $wsdl;
     $client = @new SoapClient($wsdl, array('trace' => 1));
     $function = "resizeImmage";
     $params = array('image'=>$image,'HD'=>$HD);
@@ -44,7 +49,7 @@ function avatarResize($image, $HD){
 }
 
 function setAvatar($userID){
-    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+    global $wsdl;
     $client = @new SoapClient($wsdl, array('trace' => 1));
     $function = "setAvatar";
     $params = array('userID'=>$userID);
@@ -81,7 +86,7 @@ function logOut(){
 
 function getUsername($userID){
     try{
-        $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+        global $wsdl;
         $client = @new SoapClient($wsdl, array('trace' => 1));
         $function = "getUserName";
         $params = array('userID'=>$userID);

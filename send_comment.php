@@ -5,8 +5,10 @@
 <body>
 <?php function commentForm($pid){
     ini_set("soap.wsdl_cache_enabled", "0");
-    echo $_SESSION['username'];
-    $user = $_SESSION['username'];
+    if (isset($_SESSION['username'])){
+        echo $_SESSION['username'];
+        $user = $_SESSION['username'];
+    }
 ?>
     <form name="comment_form" action="send_comment_call.php" method="post">
     <div class="send_comment_form">

@@ -17,7 +17,7 @@ require_once("helper.php");
 
 ini_set("soap.wsdl_cache_enabled", "0");
 try{
-    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+    global $wsdl;
     $client = new SoapClient($wsdl, array('trace' => 1));
     $function = "registrationRequest";
     $params = array('username' => $_POST['username'], 'password'=> $_POST['password'], 'pwconfirm'=> $_POST['pwconfirm']);

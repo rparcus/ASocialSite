@@ -11,7 +11,7 @@
         if((isset($_POST['username']) && isset($_POST['password'])) &&
             $_POST['username'] != "" && $_POST['password'] != ""){
        try{
-        $wsdl = "http://127.0.0.1:8080/ASocioalApplication/ASocial?wsdl";
+        global $wsdl;
         $client = new SoapClient($wsdl, array('trace' => 1));
         $function = "login";
         $user = $_POST['username'];
