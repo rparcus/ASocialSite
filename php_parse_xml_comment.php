@@ -2,17 +2,18 @@
 require_once("helper.php");
 function getComment($pid){
     ini_set("soap.wsdl_cache_enabled", "0");
-    $url="commentsfile.xml";
-    $xml = simplexml_load_file($url);
+    global $commentsFile; //from helper.php
+    $xml = simplexml_load_file($commentsFile);
     foreach($xml->comment as $comm){
             if($comm->post_id==$pid) {
                 $anchor="commentn".$comm->comment_id;
+                global $avatarFolder; //helper.php
                 echo '<a name="'.$anchor.'"></a>' 
 ?>      
 <div class="comment_content">
     <div class="comment_image_block">          
     	<div class="comment_image">
-            <img src="<?php echo "avatar/".$comm->user_id.".jpeg"; ?>" width="40" height="40"/>
+            <img src="<?php echo $avatarFolder.$comm->user_id.".jpeg"; ?>" width="40" height="40"/>
         </div>
     	<div class="comment_inner_content">
         	<div>

@@ -8,6 +8,7 @@
     if(isset($_SESSION["username"])){
         echo "sessione #".$_SESSION["username"]."</br>"; 
         echo "Benvenuto " .getUsername($_SESSION["username"])."</br>";
+        global $avatarFolder;
     }
     else{
         echo "sessione non inizializzata";
@@ -15,5 +16,5 @@
 
 ?>
 <div id="profile_s">    
-<img src="<?php echo "avatar/".$_SESSION["username"].".jpeg" ?>" width="100%" height="300" />
+<img src="<?php echo $avatarFolder.$_SESSION["username"].".jpeg" ?>" width="100%" height="300" />
 </div>

@@ -5,14 +5,16 @@
     ini_set("soap.wsdl_cache_enabled", "0");
     include_once("php_parse_xml_comment.php");
     include_once("send_comment.php");
-    $url="file.xml";
-    $xml = simplexml_load_file($url);
+    global $xmlFile; //from helper.php
+    global $avatarFolder; //from helper.php
+    $xml = simplexml_load_file($xmlFile);
     foreach($xml->post as $post){
         $anchor="postn".$post->post_id;
+        echo $avatarFolder.$post->user_id.".jpeg";
         echo '<a name="'.$anchor.'"></a>' ?>        
         <div class="post_content">
                 <div class="image_block">
-                <div class="image"><img src="<?php echo "avatar/".$post->user_id.".jpeg";?>" /></div>
+                <div class="image"><img src="<?php echo $avatarFolder.$post->user_id.".jpeg";?>" /></div>
 				<div class="post_inner_content">
 							<div class="post_author"><?php 
 							/*echo "avatar/".$post->user_id.".jpeg";*/

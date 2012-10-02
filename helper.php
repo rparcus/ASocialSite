@@ -8,10 +8,20 @@
  */
 
 ini_set("soap.wsdl_cache_enabled", "0");
-//Rob's wsdl
-$wsdl = "http://127.0.0.1:8081/ASocialServer/ASocialService?wsdl";
-//Forg's wsdl
-//$wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+$rob = true;
+$forg = false;
+
+if($rob){
+    //Rob's wsdl
+    $wsdl = "http://127.0.0.1:8081/ASocialServer/ASocialService?wsdl";
+    $commentsFile = "C:\\Program Files (x86)\\EasyPHP-12.1\\www\\ASocialSite\\commentsfile.xml";
+    $xmlFile = "C:\\Program Files (x86)\\EasyPHP-12.1\\www\\ASocialSite\\file.xml";
+    $avatarFolder = "file:\\\\\\C:\\Program Files (x86)\\EasyPHP-12.1\\www\\ASocialSite\\avatar\\";
+}else{
+    //Forg's wsdl
+    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+    //Setta qui le tue variabili
+}
 
 
 //agrega i parametri da inviare al WSDL come elementXML 'parameters'

@@ -23,7 +23,8 @@ if ((($_FILES["file"]["type"] == "image/gif")
     }
   else
     {
-    $folder="avatar"; 
+      global $avatarFolder;
+    $folder=$avatarFolder;
       
     echo "Upload: " . $_FILES["file"]["name"] . "<br />";
     echo "Type: " . $_FILES["file"]["type"] . "<br />";
