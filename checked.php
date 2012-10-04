@@ -11,6 +11,9 @@
         if((isset($_POST['username']) && isset($_POST['password'])) &&
             $_POST['username'] != "" && $_POST['password'] != ""){
        try{
+        /*
+         * This checks if username and password match
+         */
         global $wsdl;
         $client = new SoapClient($wsdl, array('trace' => 1));
         $function = "login";
@@ -33,6 +36,7 @@
         echo $e->getMessage();
         }
         }else{
+            /*This is a login form*/
             echo '<form action="checked.php" method="post" name="login">
                 user:<input name="username" type="text" size="10" maxlength="15" />&nbsp;
                 password:<input name="password" type="password" size="10" maxlength="15" />&nbsp;

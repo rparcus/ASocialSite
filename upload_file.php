@@ -1,7 +1,3 @@
-<!--The examples below create a temporary copy of the uploaded files in the PHP temp folder on the server.
-The temporary copied files disappears when the script ends. 
-To store the uploaded file we need to copy it to a different location:-->
-
 <?php
 session_start();
 require_once("helper.php");
@@ -41,41 +37,11 @@ if ((($_FILES["file"]["type"] == "image/gif")
       }
       else{
         echo "things failed miserably..Try reloading your file". "<br />";
-      }
-      
-      //set avatar=true nel DB per questo utente.
-      //echo "".setAvatar($_SESSION["username"]);
-      
-      
-
-//require_once("helper.php");      
-//ini_set("soap.wsdl_cache_enabled", "0");
-//try{
-//    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
-//    $client = new SoapClient($wsdl, array('trace' => 1));
-//    $function = "resizeAvatar";
-//    $params = array('url' => "http://localhost:9090/ASocialClient/avatar/2.png");//$folder. "/" . $_SESSION["username"] . str_replace("image/", ".", $_FILES["file"]["type"]));
-//    $res = $client->__soapCall($function, paramWrapper($params));    
-//    echo $res;
-    
-} 
-//catch (Exception $e) {
-//	echo $e->getMessage();
-//}	
-
-//      }
-    //}
+      }   
+    } 
   }
 else
   {
-  echo "Invalid file";
+    echo "Invalid file";
   }
 ?>
-
-<!--
-$_FILES["file"]["name"] - the name of the uploaded file
-$_FILES["file"]["type"] - the type of the uploaded file
-$_FILES["file"]["size"] - the size in bytes of the uploaded file
-$_FILES["file"]["tmp_name"] - the name of the temporary copy of the file stored on the server
-$_FILES["file"]["error"] - the error code resulting from the file upload
--->

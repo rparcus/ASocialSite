@@ -21,7 +21,7 @@ function getComment($pid){
                         echo $comm->user_id;?></div>
                     <div class="comment_date"><?php echo $comm->comment_date; ?></div>
                 </div>
-            <div class="comment_text"><?php echo $comm->comment_body; ?></div>  
+            <div class="comment_text"><?php echo URLify($comm->comment_body); ?></div>  
         </div>
     </div>
 </div>

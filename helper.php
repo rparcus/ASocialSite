@@ -11,7 +11,7 @@ ini_set("soap.wsdl_cache_enabled", "0");
 
 
 
-//**********************PHP side ambient*****************************
+//**********************PHP side ambient setter*****************************
 
 $rob = true;
 $forg = false;
@@ -64,6 +64,7 @@ function avatarResize($image, $resizedAddres, $HD){
     return $tmp->return;
 }
 
+/* Updates the db so that now we know there is an avatar for the user*/
 function setAvatar($userID){
     global $wsdl;
     $client = @new SoapClient($wsdl, array('trace' => 1));
@@ -73,6 +74,7 @@ function setAvatar($userID){
     return $tmp->return;
 }
 
+/*replaces any complete URL in a string with a link*/
 function URLify($str){
     global $wsdl;
     $client = @new SoapClient($wsdl, array('trace' => 1));

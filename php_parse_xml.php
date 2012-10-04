@@ -16,12 +16,12 @@
                 <div class="image_block">
                 <div class="image"><img src="<?php echo $avatarFolder.$post->user_id.".jpeg";?>" /></div>
 				<div class="post_inner_content">
-							<div class="post_author"><?php 
-							/*echo "avatar/".$post->user_id.".jpeg";*/
-							echo $post->username;?></div>
-							<div class="post_title"><?php echo URLify($post->post_tile);?></div>
-							<div class="post_text"><?php echo URLify($post->post_body);?></div>
-					<div class="post_date"><?php echo $post->post_date; ?></div>
+                                        <div class="post_author"><?php 
+                                        /*echo "avatar/".$post->user_id.".jpeg";*/
+                                        echo $post->username;?></div>
+                                        <div class="post_title"><?php echo URLify($post->post_tile);?></div>
+                                        <div class="post_text"><?php echo URLify($post->post_body);?></div>
+                                    <div class="post_date"><?php echo $post->post_date; ?></div>
 				</div>
           </div>
         </div>

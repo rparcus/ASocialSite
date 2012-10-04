@@ -1,7 +1,6 @@
 <html>
 <head>
 	<title>Update XML File</title>
-        <!-- WEB METHOD IS MISSING - JUST A TEST PAGE -->
 </head>
 <body>
     
