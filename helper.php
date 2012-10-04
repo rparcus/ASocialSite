@@ -55,11 +55,11 @@ function checkPassword($username, $password){
  *  inferiore (più leggero sul server).
  * 
  */
-function avatarResize($image, $HD){
+function avatarResize($image, $resizedAddres, $HD){
     global $wsdl;
     $client = @new SoapClient($wsdl, array('trace' => 1));
     $function = "resizeImmage";
-    $params = array('image'=>$image,'HD'=>$HD);
+    $params = array('image'=>$image, "resizedAddres"=>$resizedAddres, 'HD'=>$HD);
     $tmp = $client->__soapCall($function, paramWrapper($params));
     return $tmp->return;
 }

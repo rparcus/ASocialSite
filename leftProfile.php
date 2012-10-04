@@ -16,5 +16,5 @@
 
 ?>
 <div id="profile_s">    
-<img src="<?php echo $avatarFolder.$_SESSION["username"].".jpeg" ?>" width="100%" height="300" />
+<img src="<?php echo $avatarFolder."big_".$_SESSION["username"].".jpeg" ?>" width="100%" height="300" />
 </div>

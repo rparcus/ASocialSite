@@ -23,7 +23,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
     }
   else
     {
-      global $avatarFolder;
+    global $avatarFolder;
     $folder=$avatarFolder;
       
     echo "Upload: " . $_FILES["file"]["name"] . "<br />";
@@ -31,11 +31,12 @@ if ((($_FILES["file"]["type"] == "image/gif")
     echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
     echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
 
-      $fileAddress= $folder. "/" . $_SESSION["username"] . str_replace("image/", ".", $_FILES["file"]["type"]);
+      $fileAddress= $folder ."big_". $_SESSION["username"] . str_replace("image/", ".", $_FILES["file"]["type"]);
+      $resizedAddress= $folder . $_SESSION["username"] . str_replace("image/", ".", $_FILES["file"]["type"]);
       move_uploaded_file($_FILES["file"]["tmp_name"],$fileAddress);
       echo "Stored in: " . $fileAddress. "<br />";
       //resize the avatar to 50x50
-      if (avatarResize(realpath($fileAddress), true)){
+      if (avatarResize(realpath($fileAddress), realpath($resizedAddress), true)){
           echo "Risultato setAvatar:".setAvatar($_SESSION["username"]);
       }
       else{
