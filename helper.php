@@ -21,7 +21,7 @@ if($rob){
     $wsdl = "http://127.0.0.1:8081/ASocialServer/ASocialService?wsdl";
     $commentsFile = "commentsfile.xml";
     $xmlFile = "file.xml";
-    $avatarFolder = "avatar\\";
+    $avatarFolder = "avatar/";
 }else if ($forg){
     //Forg's wsdl
     $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";

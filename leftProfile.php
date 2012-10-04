@@ -9,12 +9,16 @@
         echo "sessione #".$_SESSION["username"]."</br>"; 
         echo "Benvenuto " .getUsername($_SESSION["username"])."</br>";
         global $avatarFolder;
-    }
-    else{
-        echo "sessione non inizializzata";
-    }
-
-?>
-<div id="profile_s">    
-<img src="<?php echo $avatarFolder."big_".$_SESSION["username"].".jpeg" ?>" width="100%" height="300" />
-</div>
+    ?>
+        <div id="profile_s">    
+        <img src="<?php echo $avatarFolder."big_".$_SESSION["username"].".jpeg" ?>" width="100%" height="300" />
+        </div>
+    <?php
+        }
+        else{
+            echo "sessione non inizializzata";
+        }
+    ?>
+<!--<div id="profile_s">    
+<img src="<?php// echo $avatarFolder."big_".$_SESSION["username"].".jpeg" ?>" width="100%" height="300" />
+</div>--> 
