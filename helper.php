@@ -8,21 +8,27 @@
  */
 
 ini_set("soap.wsdl_cache_enabled", "0");
+
+
+
+//**********************PHP side ambient*****************************
+
 $rob = true;
 $forg = false;
 
 if($rob){
     //Rob's wsdl
     $wsdl = "http://127.0.0.1:8081/ASocialServer/ASocialService?wsdl";
-    $commentsFile = "C:\\Program Files (x86)\\EasyPHP-12.1\\www\\ASocialSite\\commentsfile.xml";
-    $xmlFile = "C:\\Program Files (x86)\\EasyPHP-12.1\\www\\ASocialSite\\file.xml";
-    $avatarFolder = "file:\\\\\\C:\\Program Files (x86)\\EasyPHP-12.1\\www\\ASocialSite\\avatar\\";
-}else{
+    $commentsFile = "commentsfile.xml";
+    $xmlFile = "file.xml";
+    $avatarFolder = "avatar\\";
+}else if ($forg){
     //Forg's wsdl
     $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
     //Setta qui le tue variabili
 }
 
+//********************************************************************
 
 //agrega i parametri da inviare al WSDL come elementXML 'parameters'
 function paramWrapper ($parameters){
@@ -63,6 +69,15 @@ function setAvatar($userID){
     $client = @new SoapClient($wsdl, array('trace' => 1));
     $function = "setAvatar";
     $params = array('userID'=>$userID);
+    $tmp = $client->__soapCall($function, paramWrapper($params));
+    return $tmp->return;
+}
+
+function URLify($str){
+    global $wsdl;
+    $client = @new SoapClient($wsdl, array('trace' => 1));
+    $function = "URLify";
+    $params = array("str"=>$str);
     $tmp = $client->__soapCall($function, paramWrapper($params));
     return $tmp->return;
 }

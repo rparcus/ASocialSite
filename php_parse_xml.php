@@ -10,7 +10,7 @@
     $xml = simplexml_load_file($xmlFile);
     foreach($xml->post as $post){
         $anchor="postn".$post->post_id;
-        echo $avatarFolder.$post->user_id.".jpeg";
+        //echo $avatarFolder.$post->user_id.".jpeg";
         echo '<a name="'.$anchor.'"></a>' ?>        
         <div class="post_content">
                 <div class="image_block">
@@ -19,8 +19,8 @@
 							<div class="post_author"><?php 
 							/*echo "avatar/".$post->user_id.".jpeg";*/
 							echo $post->username;?></div>
-							<div class="post_title"><?php echo $post->post_title;?></div>
-							<div class="post_text"><?php echo $post->post_body;?></div>
+							<div class="post_title"><?php echo URLify($post->post_tile);?></div>
+							<div class="post_text"><?php echo URLify($post->post_body);?></div>
 					<div class="post_date"><?php echo $post->post_date; ?></div>
 				</div>
           </div>
