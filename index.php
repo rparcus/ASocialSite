@@ -42,9 +42,8 @@ function mouse_out_button(FRM,BTN)
         <?php include("send_post.php"); ?>
     </div>
     <div>
-        <?php include("php_parse_xml.php"); ?>
+        <?php include("long_poller.php"); ?>
     </div>
-      <div style="height:10em;"></div>
     <div id="right">
       <div>
           <ul>

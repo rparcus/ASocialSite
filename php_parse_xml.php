@@ -8,26 +8,29 @@
     global $xmlFile; //from helper.php
     global $avatarFolder; //from helper.php
     $xml = simplexml_load_file($xmlFile);
+    echo '<div class="post_page">';
     foreach($xml->post as $post){
         $anchor="postn".$post->post_id;
         //echo $avatarFolder.$post->user_id.".jpeg";
-        echo '<a name="'.$anchor.'"></a>' ?>        
+        echo '<a name="'.$anchor.'"></a>'; ?>        
         <div class="post_content">
-                <div class="image_block">
+            <div class="image_block">
                 <div class="image"><img src="<?php echo $avatarFolder.$post->user_id.".jpeg";?>" /></div>
-				<div class="post_inner_content">
-                                        <div class="post_author"><?php 
-                                        /*echo "avatar/".$post->user_id.".jpeg";*/
-                                        echo $post->username;?></div>
-                                        <div class="post_title"><?php echo URLify($post->post_tile);?></div>
-                                        <div class="post_text"><?php echo URLify($post->post_body);?></div>
-                                    <div class="post_date"><?php echo $post->post_date; ?></div>
-				</div>
-          </div>
+                <div class="post_inner_content">
+                        <div class="post_author"><?php 
+                        /*echo "avatar/".$post->user_id.".jpeg";*/
+                        echo $post->username;?></div>
+                        <div class="post_title"><?php echo URLify($post->post_title);?></div>
+                        <div class="post_text"><?php echo URLify($post->post_body);?></div>
+                    <div class="post_date"><?php echo $post->post_date; ?></div>
+                </div>
+            </div>
         </div>
 <?php
-    getComment("$post->post_id");
-    commentForm("$post->post_id");            
-} ?>
+        getComment("$post->post_id");
+        commentForm("$post->post_id");     
+    }
+    echo '</div>';
+?>
 </body>
 </html>

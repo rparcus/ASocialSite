@@ -28,7 +28,7 @@ if($rob){
     //Setta qui le tue variabili
 }
 
-//********************************************************************
+//**************************** END OF AMBIENT SETTER ***********************
 
 //agrega i parametri da inviare al WSDL come elementXML 'parameters'
 function paramWrapper ($parameters){
@@ -61,7 +61,8 @@ function avatarResize($image, $resizedAddres, $HD){
     $function = "resizeImmage";
     $params = array('image'=>$image, "resizedAddres"=>$resizedAddres, 'HD'=>$HD);
     $tmp = $client->__soapCall($function, paramWrapper($params));
-    return $tmp->return;
+    $resizedFile = base64_decode( $tmp->return );
+    return file_put_contents($resizedAddres,$resizedFile);
 }
 
 /* Updates the db so that now we know there is an avatar for the user*/
