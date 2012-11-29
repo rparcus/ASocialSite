@@ -12,20 +12,20 @@
     foreach($xml->post as $post){
         $anchor="postn".$post->post_id;
         //echo $avatarFolder.$post->user_id.".jpeg";
-        echo '<a name="'.$anchor.'"></a>'; ?>        
-        <div class="post_content">
-            <div class="image_block">
-                <div class="image"><img src="<?php echo $avatarFolder.$post->user_id.".jpeg";?>" /></div>
-                <div class="post_inner_content">
-                        <div class="post_author"><?php 
+        echo '<a name="'.$anchor.'"></a>';        
+        echo "<div class=\"post_content\">";
+            echo "<div class=\"image_block\">";
+                echo "<div class=\"image\"><img src=\"".$avatarFolder.$post->user_id.".jpeg\" /></div>";
+                echo "<div class=\"post_inner_content\">";
+                        echo "<div class=\"post_author\">"; 
                         /*echo "avatar/".$post->user_id.".jpeg";*/
-                        echo $post->username;?></div>
-                        <div class="post_title"><?php echo URLify($post->post_title);?></div>
-                        <div class="post_text"><?php echo URLify($post->post_body);?></div>
-                    <div class="post_date"><?php echo $post->post_date; ?></div>
-                </div>
-            </div>
-        </div>
+                        echo $post->username."</div>";
+                        echo "<div class=\"post_title\">".URLify($post->post_title)."</div>";
+                        echo "<div class=\"post_text\">".URLify($post->post_body)."</div>";
+                    echo "<div class=\"post_date\">".$post->post_date."</div>";
+                echo "</div>";
+            echo "</div>";
+        echo "</div>";?>
 <?php
         getComment("$post->post_id");
         commentForm("$post->post_id");     

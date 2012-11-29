@@ -8,7 +8,7 @@
         /* Simple helper to add a div.
         type is the name of a CSS class (old/new/error).
         msg is the contents of the div */
-        $(".post_page").prepend(
+        $(".post_page").preprend(
             "<div class='msg "+ type +"'>"+ msg +"</div>"
         );
     }
