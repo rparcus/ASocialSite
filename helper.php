@@ -30,6 +30,12 @@ if($rob){
 
 //**************************** END OF AMBIENT SETTER ***********************
 
+$user_id = 0;
+function setUser_id ($id){
+    global $user_id;
+    $user_id = $id;
+}
+
 //agrega i parametri da inviare al WSDL come elementXML 'parameters'
 function paramWrapper ($parameters){
     return array('parameters' => $parameters);

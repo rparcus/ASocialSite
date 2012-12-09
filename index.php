@@ -41,9 +41,6 @@ function mouse_out_button(FRM,BTN)
     <div id="send_post_div">
         <?php include("send_post.php"); ?>
     </div>
-    <div>
-        <?php include("long_poller.php"); ?>
-    </div>
     <div id="right">
       <div>
           <ul>
@@ -57,10 +54,12 @@ function mouse_out_button(FRM,BTN)
               <li><a href="php_parse_xml.php">Parse XML</a></li>
           </ul>
       </div>
+    </div>    
+<div id="down" style="color:white; text-align:right; font-size:10px;"><br/>A-Soc!al ©2012 FARP corp - all rights reserved.</div>
+    <div>
+        <?php include_once("long_poller.php"); ?>
     </div>
   </div>  
 </div>
-<div id="down" style="color:white; text-align:right; font-size:10px;"><br/>A-Soc!al ©2012 FARP corp - all rights reserved.</div>
-
 </body>
 </html>

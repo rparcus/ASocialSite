@@ -3,11 +3,15 @@
 	<title>A-Social - Comment</title>
 </head>
 <body>
-<?php function commentForm($pid){
+<?php
+    function commentForm($pid, $user_id){
     ini_set("soap.wsdl_cache_enabled", "0");
     if (isset($_SESSION['username'])){
         echo $_SESSION['username'];
         $user = $_SESSION['username'];
+    }else{
+        echo $user_id;
+        $user = $user_id;
     }
 ?>
     <form name="comment_form" action="send_comment_call.php" method="post">

@@ -8,9 +8,10 @@
         /* Simple helper to add a div.
         type is the name of a CSS class (old/new/error).
         msg is the contents of the div */
-        $(".post_page").preprend(
-            "<div class='msg "+ type +"'>"+ msg +"</div>"
-        );
+        //$(".post_page").replaceWith(
+          //  "<div class='msg "+ type +"'>"+ msg +"</div>"
+        //);
+        $(".post_page").replaceWith(msg);
     }
 
     function waitForMsg(){
@@ -28,26 +29,28 @@
                 addmsg("new", data); /* Add response to a .msg div (with the "new" class)*/
                 setTimeout(
                     waitForMsg, /* Request next message */
-                    1000 /* ..after 1 seconds */
+                    10000 /* ..after 1 seconds */
                 );
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
-                addmsg("error", textStatus + " (" + errorThrown + ")");
-                setTimeout(
-                    waitForMsg, /* Try again after.. */
-                    15000); /* milliseconds (15seconds) */
+                //addmsg("error", textStatus + " (" + errorThrown + ")");
+                //setTimeout(
+                  //  waitForMsg, // Try again after.. 
+                   // 15000); // milliseconds (15seconds) 
             }
         });
     };
 
-    $(document).ready(function(){
-        waitForMsg(); /* Start the inital request */
-    });
+    //$(document).ready(function(){
+      //  waitForMsg(); /* Start the inital request */
+    //});
     </script>
 </head>
-<body>
+<body onload ="waitForMsg()">
     <div id="messages">
-        <?php include("php_parse_xml.php"); ?>
+        <?php
+            include("php_parse_xml.php");
+        ?>
     </div>
 </body>
 </html>

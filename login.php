@@ -9,6 +9,7 @@
             if($res>0){
                 $_SESSION['username'] = stripslashes(htmlspecialchars($res));
                 echo "user_id: ".$res.' <a href="logout.php">logout</a>';
+                setUser_id($_SESSION['username']);
             }
             else{
                 //Invalid username or password.

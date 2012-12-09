@@ -28,7 +28,11 @@
         echo "</div>";?>
 <?php
         getComment("$post->post_id");
-        commentForm("$post->post_id");     
+        if(isset($_SESSION['username'])){
+            commentForm("$post->post_id", $_SESSION['username']); 
+        }else{
+            commentForm("$post->post_id", 0);
+        }
     }
     echo '</div>';
 ?>
