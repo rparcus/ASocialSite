@@ -15,7 +15,7 @@
         echo '<a name="'.$anchor.'"></a>';        
         echo "<div class=\"post_content\">";
             echo "<div class=\"image_block\">";
-                echo "<div class=\"image\"><img src=\"".$avatarFolder.$post->user_id.".jpeg\" /></div>";
+                echo "<div class=\"image\"><img src=\"".$avatarFolder."small_".$post->user_id.".jpeg\" /></div>";
                 echo "<div class=\"post_inner_content\">";
                         echo "<div class=\"post_author\">"; 
                         /*echo "avatar/".$post->user_id.".jpeg";*/

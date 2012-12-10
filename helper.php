@@ -21,7 +21,7 @@ if($rob){
     $wsdl = "http://127.0.0.1:8081/ASocialServer/ASocialService?wsdl";
     $commentsFile = "commentsfile.xml";
     $xmlFile = "file.xml";
-    $avatarFolder = "avatar/";
+    $avatarFolder = "avatar\\";
 }else if ($forg){
     //Forg's wsdl
     $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
@@ -61,14 +61,14 @@ function checkPassword($username, $password){
  *  inferiore (più leggero sul server).
  * 
  */
-function avatarResize($image, $resizedAddres, $HD){
+function avatarResize($image, $resizedAddress, $width, $height, $HD){
     global $wsdl;
     $client = @new SoapClient($wsdl, array('trace' => 1));
     $function = "resizeImmage";
-    $params = array('image'=>$image, "resizedAddres"=>$resizedAddres, 'HD'=>$HD);
+    $params = array('image'=>$image,'width'=>$width, 'height'=>$height, 'HD'=>$HD);
     $tmp = $client->__soapCall($function, paramWrapper($params));
-    $resizedFile = base64_decode( $tmp->return );
-    return file_put_contents($resizedAddres,$resizedFile);
+    $resizedFile = base64_decode($tmp->return);
+    return file_put_contents($resizedAddress,$resizedFile);
 }
 
 /* Updates the db so that now we know there is an avatar for the user*/

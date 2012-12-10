@@ -14,7 +14,7 @@ echo("Hi! Have a random number: " . rand(1,10));
     if(isset($_SESSION["username"])){
         $user_id = $_SESSION["username"];
     }
-    session_write_close();
+    //session_write_close();
     sleep(rand(20,25));
     require("helper.php");
     ini_set("soap.wsdl_cache_enabled", "0");
@@ -31,7 +31,7 @@ echo("Hi! Have a random number: " . rand(1,10));
         echo '<a name="'.$anchor.'"></a>';        
         echo "<div class=\"post_content\">";
             echo "<div class=\"image_block\">";
-                echo "<div class=\"image\"><img src=\"".$avatarFolder.$post->user_id.".jpeg\" /></div>";
+                echo "<div class=\"image\"><img src=\"".$avatarFolder."small_".$post->user_id.".jpeg\" /></div>";
                 echo "<div class=\"post_inner_content\">";
                         echo "<div class=\"post_author\">"; 
                         /*echo "avatar/".$post->user_id.".jpeg";*/
