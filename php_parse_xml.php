@@ -19,10 +19,20 @@
                 echo "<div class=\"post_inner_content\">";
                         echo "<div class=\"post_author\">"; 
                         /*echo "avatar/".$post->user_id.".jpeg";*/
-                        echo $post->username."</div>";
+                        if (!check_not_empty($post->username)){
+                    		echo "Anonimo Asociale </div>";
+                    	}
+						else{
+                        	echo $post->username."</div>";
+						}
                         echo "<div class=\"post_title\">".URLify($post->post_title)."</div>";
                         echo "<div class=\"post_text\">".URLify($post->post_body)."</div>";
                     echo "<div class=\"post_date\">".$post->post_date."</div>";
+					if(isset($_SESSION['username'])){
+						if($post->user_id == $_SESSION['username'] or isset($SESSION['admin'])){  
+	                        echo '<a href="remove_post_call.php?postID='.$post->post_id.'"'.'>[X]</a>';
+	                    }
+					}
                 echo "</div>";
             echo "</div>";
         echo "</div>";?>

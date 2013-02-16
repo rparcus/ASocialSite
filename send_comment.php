@@ -7,10 +7,10 @@
     function commentForm($pid, $user_id){
     ini_set("soap.wsdl_cache_enabled", "0");
     if (isset($_SESSION['username'])){
-        echo $_SESSION['username'];
+        //echo $_SESSION['username'];
         $user = $_SESSION['username'];
     }else{
-        echo $user_id;
+        //echo $user_id;
         $user = $user_id;
     }
 ?>
@@ -19,7 +19,7 @@
         <div class="send_comment_content">
             <textarea class="comment_textarea" name="comment_body" rows="1"></textarea>
             <div class="comment_submit">
-                <input class="send_button" type="submit" name="send_comment" value="send">
+                <input class="send_button_comment" type="submit" name="send_comment" value="Invia">
             </div>
         </div>
     </div>

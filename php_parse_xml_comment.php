@@ -18,8 +18,19 @@ echo "<div class=\"comment_content\">";
     	echo "<div class=\"comment_inner_content\">";
         	echo "<div>";
                     echo "<div class=\"comment_author\">"; /*echo getUsername($comm->user_id);*/
-                        echo $comm->user_id."</div>";
+                    	if (!check_not_empty($comm->username)){
+                    		echo "Anonimo Asociale </div>";
+                    	}
+						else{
+                        	echo $comm->username."</div>";
+						}
+						//echo "</div>";
                     echo "<div class=\"comment_date\">".$comm->comment_date."</div>";
+					if(isset($_SESSION['username'])){
+	                    if($comm->user_id == $_SESSION['username'] or isset($SESSION['admin'])){
+	                        echo '<a href="remove_comment_call.php?commentID='.$comm->comment_id.'"'.'>[X]</a>';
+	                    }
+					}
                 echo "</div>";
             echo "<div class=\"comment_text\">".URLify($comm->comment_body)."</div>";  
         echo "</div>";

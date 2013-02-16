@@ -5,6 +5,7 @@
     Description:
         Purpose of the stylesheet follows.
 */
+
 #top_container {
     background-color: rgb(17,17,15);
     position: fixed;
@@ -21,6 +22,14 @@
     border-bottom-color: rgb(63,189,237);
     z-index:999;
 }
+body{
+	background: #25303C;
+	color:#EEEEEE;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-weight: 300;
+   	line-height:100%;
+}
+
 #body_container {
     position: absolute;
     top:10%;
@@ -48,17 +57,11 @@
     min-height:1200px;
     padding-left:3%;
     padding-right:3%;
-    border-left-width: 7px;
-    border-left-style: solid;
-    border-left-color: rgb(247,247,247);
-    border-right-width: 7px;
-    border-right-style: solid;
-    border-right-color: rgb(247,247,247);
 }
 #left {
     float:left;
-    height:100%;
-    width: 14%;
+    height:1000px;
+    width: 19%;
     padding-left:2%;
     padding-right:2%;
 }
@@ -67,7 +70,7 @@
     right:0px;
     top:10%;
     height:100%;
-    width: 18%;
+    width: 13%;
     padding-right:2%;
     padding-left:2%;
 }
@@ -78,12 +81,11 @@
     background-color: #000;
     height: 40px;
     width: 100%;
-    border-top: 1px solid rgb(63,189,237);
     z-index:999;		
 }
 #profile_S {
 	position: relative;
-	height: 300px;
+	height: 350px;
 	width:100%;	
 }
 
@@ -121,12 +123,11 @@
     margin-left: 10px;
     border: thin solid rgb(63,189,237);
 }
+.post_page{
+	top: 50px;
+}
 .post_inner_content{
-    border: thin solid rgb(247,247,247);
-    border-left-width:10px;
-    border-left-color:rgb(63,189,237);
-    border-top-width:2px;
-    border-top-color:rgb(63,189,237);
+    border: thin solid #728EAA;
 }
 .post_author{
     font-weight: bold;
@@ -140,12 +141,12 @@
     margin-left: 5em;
     margin-right: 1em;
     padding:5px;
-    background-color:rgb(247,247,247);
+
 }
 .post_date{
     font-size:10px;
     text-align: right;
-    background-color: rgb(247,247,247);
+    background-color: #728EAA;
     margin-top:1em;
 }
 
@@ -156,6 +157,10 @@
     margin-bottom: 0px;
     margin-left:5%;
 }
+.send_comment_content{
+	left:-60px;
+}
+
 .comment_image_block{
     margin:20px;
     position: relative;
@@ -167,10 +172,10 @@
     margin-right: 10px;
     margin-bottom: 10px;
     margin-left: 10px;
-    border: thin solid rgb(63,189,237);
+    border: thin solid #728EAA;
 }
 .comment_inner_content{
-    border: thin solid rgb(247,247,247);	
+    border: thin solid #728EAA;	
 }
 .comment_author{
     font-weight: bold;
@@ -181,7 +186,6 @@
     margin-left: 3.5em;
     margin-right: 1em;
     padding:5px;
-    background-color:rgb(247,247,247);
 }
 .comment_date{
     font-size:10px;
@@ -190,20 +194,28 @@
     right: 2em;
     top: 5px;
 }
+textarea{
+	background-color:#dacfc3;
+}
 .comment_textarea {
     margin:0px;
-    border: thin solid rgb(230,230,230);
-    height:1.5em;
+    border: thin solid #728EAA);
+    height:3em;
     width:100%;
+}
+.comment_submit{
+    position:absolute;
+    right:-130px;
+    top: 12px; 
 }
 .post_textarea {
     margin:0px;
     width:100%;
-    border: thin solid rgb(230,230,230);
+    border: thin solid #728EAA;
 }
 .login_textarea {
     margin:0px;
-    border: thin solid rgb(230,230,230);
+    border: thin solid #728EAA;
 }
 iframe{
     position:relative;
@@ -221,18 +233,12 @@ iframe{
     width: 68%;
     margin-left:21.5%;
 }
-.comment_submit{
-    position:absolute;
-    top:-4px;
-    right:-3em;
-}
+
 #send_post_div{
-    border-bottom-width: 7px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(247,247,247);
     position:relative;
     margin-left:0px;
     margin-right:0px;
+    margin-bottom:60px;
 }
 a:link {
     color:rgb(63,189,237);
@@ -246,7 +252,26 @@ a:active {
 a:hover {
     color:rgb(23,169,217);
 }
-.send_button {
+.send_button_post{
+	width: 100px; height: 23px; float: right; margin: 0 15px 0 0; top:100px;
+	-moz-box-shadow: 0px 0px 5px #999;-webkit-box-shadow: 0px 0px 5px #999;
+	border: 1px solid #556f8c;
+	background: -moz-linear-gradient(top, #718DA9 0%, #415D79 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#718DA9), color-stop(100%,#415D79)); /* webkit */
+	cursor: pointer;
+}
+.send_button_comment{
+	width: 100px; height: 23px; float: right; margin: 0 15px 0 0;
+	top:123px;
+	-moz-box-shadow: 0px 0px 5px #999;-webkit-box-shadow: 0px 0px 5px #999;
+	border: 1px solid #556f8c;
+	background: -moz-linear-gradient(top, #718DA9 0%, #415D79 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#718DA9), color-stop(100%,#415D79)); /* webkit */
+	cursor: pointer;
+}
+
+
+.send_button2 {
     background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f0f0f0), color-stop(1, #e6e6e6) );
     background:-moz-linear-gradient( center top, #f0f0f0 5%, #e6e6e6 100% );
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#e6e6e6');
@@ -259,12 +284,12 @@ a:hover {
     font-weight:normal;
     padding:3.5px 7px;
     text-decoration:none;
-}.send_button:hover {
+}.send_button2:hover {
     background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e6e6e6), color-stop(1, #f0f0f0) );
     background:-moz-linear-gradient( center top, #e6e6e6 5%, #f0f0f0 100% );
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6e6e6', endColorstr='#f0f0f0');
     background-color:#e6e6e6;
-}.send_button:active {
+}.send_button2:active {
     position:relative;
     top:1px;
 }

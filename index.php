@@ -57,7 +57,7 @@ function mouse_out_button(FRM,BTN)
     </div>    
 <div id="down" style="color:white; text-align:right; font-size:10px;"><br/>A-Soc!al ©2012 FARP corp - all rights reserved.</div>
     <div>
-        <?php include_once("long_poller.php"); ?>
+        <?php include_once("php_parse_xml.php"); ?>
     </div>
   </div>  
 </div>

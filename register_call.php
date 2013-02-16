@@ -20,7 +20,7 @@ try{
     global $wsdl;
     $client = new SoapClient($wsdl, array('trace' => 1));
     $function = "registrationRequest";
-    $params = array('username' => $_POST['username'], 'password'=> $_POST['password'], 'pwconfirm'=> $_POST['pwconfirm']);
+    $params = array('username' => $_POST['nick'], 'password'=> $_POST['pw'], 'pwconfirm'=> $_POST['pwconfirm']);
     $res = $client->__soapCall($function, paramWrapper($params));
     echo "<h2>Registation: " . $res->return . "</h2>";
 } catch (Exception $e) {

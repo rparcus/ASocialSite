@@ -18,13 +18,16 @@ $forg = false;
 
 if($rob){
     //Rob's wsdl
-    $wsdl = "http://127.0.0.1:8081/ASocialServer/ASocialService?wsdl";
+    $wsdl = "http://127.0.0.1:8084/ASocialServer/ASocialService?wsdl";
     $commentsFile = "commentsfile.xml";
     $xmlFile = "file.xml";
     $avatarFolder = "avatar\\";
 }else if ($forg){
     //Forg's wsdl
-    $wsdl = "http://127.0.0.1:8080/ASocialServer/ASocialService?wsdl";
+    $wsdl = "http://127.0.0.1:8084/ASocialServer/ASocialService?wsdl";
+    $commentsFile = "commentsfile.xml";
+    $xmlFile = "file.xml";
+    $avatarFolder = "avatar\\";
     //Setta qui le tue variabili
 }
 
@@ -80,6 +83,16 @@ function setAvatar($userID){
     $tmp = $client->__soapCall($function, paramWrapper($params));
     return $tmp->return;
 }
+/* Checks if the avatar atribute is set to 1 or 0*/
+function checkAvatar($userID){
+    global $wsdl;
+    $client = @new SoapClient($wsdl, array('trace' => 1));
+    $function = "checkAvatar";
+    $params = array('userID'=>$userID);
+    $tmp = $client->__soapCall($function, paramWrapper($params));
+    return $tmp->return;
+}
+
 
 /*replaces any complete URL in a string with a link*/
 function URLify($str){
@@ -131,6 +144,41 @@ function getUsername($userID){
     }
 }
 
+function getUserBio($userID){
+    try{
+        global $wsdl;
+        $client = @new SoapClient($wsdl, array('trace' => 1));
+        $function = "getUserBio";
+        $params = array('userID'=>$userID);
+        $tmp = $client->__soapCall($function, paramWrapper($params));
+        return $tmp->return;
+    }catch (Exception $e) {
+	echo $e->getMessage();
+    }
+}
+
+function setUserBio($userID, $bio){
+    try{
+        global $wsdl;
+        $client = @new SoapClient($wsdl, array('trace' => 1));
+        $function = "setUserBio";
+        $params = array('userID'=>$userID, 'bio'=>$bio);
+        $tmp = $client->__soapCall($function, paramWrapper($params));
+        return $tmp->return;
+    }catch (Exception $e) {
+	echo $e->getMessage();
+    }
+}
+
+function check_not_empty($s, $include_whitespace = false)
+{
+    if ($include_whitespace) {
+        // make it so strings containing white space are treated as empty too
+        $s = trim($s);
+    }
+    return (isset($s) && strlen($s)); // var is set and not an empty string ''
+}
+
 function checkWichSession($userID){
     /*
      * Prende in input userID e dice se quella sessione è attiva o meno
@@ -138,5 +186,18 @@ function checkWichSession($userID){
      */
 }
 
+function isAdmin($userID){
+    try{
+        global $wsdl;
+        $client = new SoapClient($wsdl, array('trace' => 1));
+        $function = "isAdmin";
+        $params = array('userID' => $userID);
+        $res = $client->__soapCall($function, paramWrapper($params));
+        return $res->return;
+        header("location: index.php");
+} catch (Exception $e) {
+	echo $e->getMessage();
+}	
+}
 
 ?>
