@@ -22,17 +22,20 @@
                         if (!check_not_empty($post->username)){
                     		echo "Anonimo Asociale </div>";
                     	}
-						else{
-                        	echo $post->username."</div>";
+                        else{
+                                echo '<a href="user_profile.php?username='.$post->user_id.'">';
+                        	echo $post->username."</a></div>";
 						}
                         echo "<div class=\"post_title\">".URLify($post->post_title)."</div>";
                         echo "<div class=\"post_text\">".URLify($post->post_body)."</div>";
                     echo "<div class=\"post_date\">".$post->post_date."</div>";
 					if(isset($_SESSION['username'])){
-						if($post->user_id == $_SESSION['username'] or isset($SESSION['admin'])){  
-	                        echo '<a href="remove_post_call.php?postID='.$post->post_id.'"'.'>[X]</a>';
-	                    }
+						if($post->user_id == $_SESSION['username'] || isset($_SESSION['admin'])){
+                                                       echo '<a href="remove_post_call.php?postID='.$post->post_id.'"'.'><img src="delete.png" width="20" height="20px" title="Cancella commento" alt="Cancella il post"/></a>';
+                                
+                                                }
 					}
+                                        echo '<a class="hateButton" href="hate_post_call.php?postID='.$post->post_id.'"'.'><img src="hate.jpg" width="20" height="20px" title="Hate it!" alt="Hate it!"/></a>'.$post->hate;
                 echo "</div>";
             echo "</div>";
         echo "</div>";?>
@@ -44,6 +47,7 @@
             commentForm("$post->post_id", 0);
         }
     }
+	echo '<br/><br/><br/><br/><br/>';
     echo '</div>';
 ?>
 </body>

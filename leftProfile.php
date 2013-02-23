@@ -7,7 +7,7 @@
 
     if(isset($_SESSION["username"])){
         //echo "sessione #".$_SESSION["username"]."</br>"; 
-        //echo getUsername($_SESSION["username"])."</br></br>";
+        echo "<a href='user_profile.php'>".getUsername($_SESSION["username"])."<a/></br></br>";
 		//echo checkAvatar($_SESSION["username"]);
         global $avatarFolder;
     ?>
@@ -21,6 +21,17 @@
 			}
         	?>" width="100%" height="250px" />
         </div>
+              <div>
+          <ul>
+          		<?php 
+          		if(!isset($_SESSION["username"])){
+					echo '<li><a href="register.php"><button class="register_button_right" type="button" value="Registrati" >Registrati</button></a></li>';
+				}
+				else{
+				echo'<li><a href="upload_file_form.php"><button class="register_button_right" type="button" value="Registrati" >Upload Avatar</button></a></li>';
+				}?>
+		  </ul>
+      </div>
     <?php
         }
         else{

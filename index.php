@@ -2,7 +2,6 @@
     session_start();
     require_once("helper.php");
     ini_set("soap.wsdl_cache_enabled", "0");
-    print_r ($_SESSION);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -44,15 +43,11 @@ function mouse_out_button(FRM,BTN)
     <div id="right">
       <div>
           <ul>
-              <li><a href="register.php">Register</a></li>
-              <li><a href="login.php">Login</a></li>
-              <li><a href="send_post.php">Send Post</a></li>
-              <li><a href="send_comment.php">Send Comment</a></li>
-              <li><a href="upload_file_form.php">Upload Avatar</a></li>
-              <li><a href="upload_file_form.php">Resize my Avatar</a></li>
-              <li><a href="update_xml_call.php">Update XML</a></li>
-              <li><a href="php_parse_xml.php">Parse XML</a></li>
-          </ul>
+          		<?php 
+          		if(!isset($_SESSION["username"])){
+					echo '<li><a href="register.php"><button class="register_button_right" type="button" value="Registrati" >Registrati</button></a></li>';
+				}?>
+		  </ul>
       </div>
     </div>    
 <div id="down" style="color:white; text-align:right; font-size:10px;"><br/>A-Soc!al ©2012 FARP corp - all rights reserved.</div>

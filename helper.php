@@ -44,6 +44,17 @@ function paramWrapper ($parameters){
     return array('parameters' => $parameters);
 }
 
+function monitor(){
+	global $wsdl;
+	$client = @new SoapClient($wsdl, array('trace' => 1));
+	echo "Request : <br/><xmp>".htmlentities($client->__getLastRequest()).'</xmp><br/><br/>';
+	echo "Response : <br/>".htmlentities($client->__getLastResponse()).'<br/><br/>';
+	echo "REQUEST HEADERS:\n" . $client->__getLastRequestHeaders() . "<br/>";
+	echo "RESPONSE HEADERS:\n" . $client->__getLastResponseHeaders() . "<br/>";
+	var_dump($client->__getFunctions());
+	echo "<br/><br/><br/>";
+	var_dump($client->__getTypes());
+}
 
 /*  controlla che la combinazione unica nomeutente->password sia presente nel db
  *  restituisce -1 con un errore o in caso di password sbagliata.

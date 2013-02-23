@@ -22,7 +22,8 @@ try{
     $function = "registrationRequest";
     $params = array('username' => $_POST['nick'], 'password'=> $_POST['pw'], 'pwconfirm'=> $_POST['pwconfirm']);
     $res = $client->__soapCall($function, paramWrapper($params));
-    echo "<h2>Registation: " . $res->return . "</h2>";
+    echo $res->return . "</h2>";
+	header("Refresh: 4;url=./index.php");
 } catch (Exception $e) {
 	echo $e->getMessage();
 }	

@@ -10,6 +10,10 @@
                 $_SESSION['username'] = stripslashes(htmlspecialchars($res));
                 echo "user_id: ".$res.' <a href="logout.php">logout</a>';
                 setUser_id($_SESSION['username']);
+                $admin = isAdmin($_SESSION['username']);
+                if($admin > 0){
+                    $_SESSION['admin'] = $admin;
+                }
             }
             else{
                 //Invalid username or password.

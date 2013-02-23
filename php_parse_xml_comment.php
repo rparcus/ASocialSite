@@ -22,14 +22,16 @@ echo "<div class=\"comment_content\">";
                     		echo "Anonimo Asociale </div>";
                     	}
 						else{
-                        	echo $comm->username."</div>";
+							echo '<a href="user_profile.php?username='.$comm->user_id.'">';
+                        	echo $comm->username."</a></div>";
 						}
 						//echo "</div>";
                     echo "<div class=\"comment_date\">".$comm->comment_date."</div>";
 					if(isset($_SESSION['username'])){
-	                    if($comm->user_id == $_SESSION['username'] or isset($SESSION['admin'])){
-	                        echo '<a href="remove_comment_call.php?commentID='.$comm->comment_id.'"'.'>[X]</a>';
+	                    if($comm->user_id == $_SESSION['username'] || isset($_SESSION['admin'])){
+	                        echo '<a href="remove_comment_call.php?commentID='.$comm->comment_id.'"'.'><img src="delete.png" width="20" height="20px" title="Cancella commento" alt="Cancella commento"/></a>';
 	                    }
+                            echo '<a class="hateButton" href="hate_comment_call.php?commentID='.$comm->comment_id.'"'.'><img src="hate.jpg" width="20" height="20px" title="Hate it!" alt="Hate it!"/></a>'.$comm->hate;
 					}
                 echo "</div>";
             echo "<div class=\"comment_text\">".URLify($comm->comment_body)."</div>";  
